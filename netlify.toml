@@ -15,3 +15,6 @@
     from = "/feed/"
     to = "/feed/feed.xml"
     status = 200
+    from = "/*"
+    to = "/not-found-page.njk"
+    status = 404
