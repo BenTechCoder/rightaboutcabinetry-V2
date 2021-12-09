@@ -15,4 +15,3 @@
     from = "/feed/"
     to = "/feed/feed.xml"
     status = 200
-   
