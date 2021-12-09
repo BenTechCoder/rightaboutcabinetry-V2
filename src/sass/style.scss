@@ -12,3 +12,28 @@
 @use "contact";
 @use "legacy-styles";
 
+:root {
+    --color-1: #040710;
+    --color-2: #00163d;
+    --color-3: #023064;
+    --color-4: #6e9bc5;
+    --color-5: #d2e3ee;
+    --color-6: #ce6c3b;
+  }
+  
+  
+  body{
+    color: var(--color-2);
+    background-color: aliceblue;
+    font-size: 80%;
+    scroll-behavior: smooth;
+    font-family: 'Times New Roman', Times, serif !important;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  a {
+    text-decoration: none;
+     color: inherit; 
+  }
