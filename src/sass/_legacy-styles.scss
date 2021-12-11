@@ -4,7 +4,6 @@
 
 
 
-
 .nav-hero {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
     url("img/2370612355_6f54b216ae_o.webp");
@@ -181,6 +180,7 @@ text-align: center;
   padding: 1rem;
   border-radius: 1rem;
   font-size: 2.0rem;
+  word-break: keep-all;
   background-color: var(--color-6);
 }
 
