@@ -45,13 +45,13 @@
       href="/feed/"
     />
   </head>
-     <header class="nav-hero">
-      <nav class="navbar">
-        <a href="/" class="nav-logo">Right About</a>
-        <ul class="nav-menu">
-          <li class="nav-item">
-            <a href="/services/" class="nav-link">Services</a>
-            <!-- <div class="dropdown">
+  <header class="nav-hero">
+    <nav class="navbar">
+      <a href="/" class="nav-logo">Right About</a>
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="/services/" class="nav-link">Services</a>
+          <!-- <div class="dropdown">
     <button class="dropbtn nav-link">Services
       <i class="fa fa-caret-down"></i>
     </button>
@@ -61,33 +61,29 @@
       <a href="#">Link 3</a>
     </div>
     </div> -->
-          </li>
-          <li class="nav-item">
-            <a href="/portfolio" class="nav-link">Portfolio</a>
-          </li>
-          <li class="nav-item">
-            <a href="/contact" class="nav-link">Contact</a>
-          </li>
-        </ul>
-        <div class="hamburger">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </div>
-      </nav>
-    
-      <div id="hero-id" class="hero-container">
-        <header class="hero">
-          <h1>{{ heroContent }}</h1>
-          <p class="hero-p">{{ heroP }}</p>
-         
-        </header>
+        </li>
+        <li class="nav-item">
+          <a href="/portfolio" class="nav-link">Portfolio</a>
+        </li>
+        <li class="nav-item">
+          <a href="/contact" class="nav-link">Contact</a>
+        </li>
+      </ul>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
       </div>
-        </header>
-  <body class="body">
- 
-    
+    </nav>
 
+    <div id="hero-id" class="hero-container">
+      <header class="hero">
+        <h1>{{ heroContent }}</h1>
+        <p class="hero-p">{{ heroP }}</p>
+      </header>
+    </div>
+  </header>
+  <body class="body">
     {{ content | safe }}
 
     <footer class="footer">
@@ -116,30 +112,7 @@
     </footer>
   </body>
   <script>
-    let modal = document.querySelector(".modal");
-let modalImg = document.querySelector(".modal-img");
-let img = document.querySelector(".services-img");
-let captionText = document.querySelector(".caption");
-Array.from(document.querySelectorAll(".services-img")).forEach((item) => {
-  item.onclick = function () {
-    modal.style.display = "grid";
-    modalImg.src = this.src;
-    captionText.innerHTML = this.alt;
-   console.log(captionText)
-  };
-});
-
-let span = document.getElementsByClassName("close")[0];
-
-span.onclick = function () {
-  modal.style.display = "none";
-};
-
-let closeBtn = document.querySelector(".close-btn");
-closeBtn.onclick = function () {
-  modal.style.display = "none";
-};
-
+  
     const hamBurger = document.querySelector(".hamburger");
     const navMenu = document.querySelector(".nav-menu");
     let mobileMenu = () => {
@@ -148,5 +121,29 @@ closeBtn.onclick = function () {
     };
 
     hamBurger.addEventListener("click", mobileMenu);
+
+    let closeModal = document.getElementsByClassName("close")[0];
+
+closeModal.addEventListener("click", function () {
+  modal.style.display = "none";
+});
+
+let closeBtn = document.querySelector(".close-btn");
+closeBtn.onclick = function () {
+  modal.style.display = "none";
+};
+
+
+    let modal = document.querySelector(".modal");
+    let modalImg = document.querySelector(".modal-img");
+    let img = document.querySelector(".services-img");
+    let captionText = document.querySelector(".caption");
+    Array.from(document.querySelectorAll(".services-img")).forEach((item) => {
+      item.onclick = function () {
+        modal.style.display = "grid";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+      };
+    });
   </script>
 </html>
