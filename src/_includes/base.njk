@@ -136,9 +136,9 @@ closeBtn.onclick = function () {
 
     let modal = document.querySelector(".modal");
     let modalImg = document.querySelector(".modal-img");
-    let img = document.querySelector(".services-img");
+    let img = document.querySelector(".services-img-container");
     let captionText = document.querySelector(".caption");
-    Array.from(document.querySelectorAll(".services-img")).forEach((item) => {
+    Array.from(img.getElementsByTagName('img')).forEach((item) => {
       item.onclick = function () {
         modal.style.display = "grid";
         modalImg.src = this.src;

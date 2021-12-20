@@ -13,7 +13,17 @@
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 2px;
   max-width: 800px;
+  
+  img {
+    width: 100%;
+    max-width:700px;
+    border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
   }
+  img:hover {opacity: 0.7;}
+  
+}
   
   .portfolio-img-container {
     display: grid;
@@ -25,15 +35,11 @@
   
   }
   
-  .services-img {
-    width: 100%;
-      max-width:700px;
-      border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
+  // .services-img {
+   
+  // }
   
-  .services-img:hover {opacity: 0.7;}
+ 
   
   
   /* Style the Image Used to Trigger the Modal */

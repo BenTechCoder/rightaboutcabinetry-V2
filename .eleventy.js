@@ -6,9 +6,30 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const packageVersion = require("./package.json").version;
+const Image = require('@11ty/eleventy-img');
 
+async function imageShortcode(src, alt, sizes) {
+  let metadata = await Image(src, {
+    widths: [null],
+    formats: ["webp", "jpeg"],
+    outputDir: "public/img"
+  });
+
+  let imageAttributes = {
+    alt,
+    sizes,
+    loading: "lazy",
+    decoding: "async",
+  };
+
+  // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
+  return Image.generateHTML(metadata, imageAttributes, {
+    whitespaceMode: "inline"
+  });
+}
 module.exports = function (eleventyConfig) {
-  
+  eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
+  eleventyConfig.addLiquidShortcode("image", imageShortcode);
   eleventyConfig.addPlugin(socialImages);
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(pluginRss);
