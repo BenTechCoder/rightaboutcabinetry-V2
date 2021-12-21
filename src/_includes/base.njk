@@ -141,6 +141,7 @@ closeBtn.onclick = function () {
     Array.from(img.getElementsByTagName('img')).forEach((item) => {
       item.onclick = function () {
         modal.style.display = "grid";
+        modalImg.alt = this.alt;
         modalImg.src = this.src;
         captionText.innerHTML = this.alt;
       };
