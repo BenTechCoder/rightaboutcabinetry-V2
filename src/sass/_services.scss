@@ -39,7 +39,7 @@
     cursor: pointer;
     transition: 0.3s;
   }
-  img:hover {
+  picture:hover {
     opacity: 0.7;
   }
 }
@@ -73,7 +73,9 @@
   width: 70%;
   max-width: 700px;
 }
-
+.modal-content:hover {
+  opacity: 100;
+}
 /* Caption of Modal Image (Image Text) - Same Width as the Image */
 .caption {
   margin: 0 auto;
