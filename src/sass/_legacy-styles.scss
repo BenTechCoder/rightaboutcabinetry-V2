@@ -1,6 +1,7 @@
 @use "theme";
 
 .nav-hero {
+  
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
     url("/img/2370612355_6f54b216ae_o (1).jpg");
   /* background-position: center; */
@@ -67,6 +68,7 @@
 }
 
 .hero-container {
+
   text-align: center;
   color: aliceblue;
   box-shadow: 2rem 2 rem 1rem var(--color-2);
@@ -82,7 +84,7 @@
 .hero {
   /* background-color: rgba(0, 0, 0, 0.4); */
 
-  text-shadow: black 0.1em 0.1em 0.2em;
+  text-shadow: #000 0.1em 0.1em 0.2em;
   padding: 1rem;
   transition: cubic-bezier(0.68, -0.55, 0.265, 1.55);
   transition-duration: 2s;
@@ -128,7 +130,7 @@
 .footer {
   margin-top: auto;
   text-align: center;
-
+color: aliceblue;
   background-color: var(--color-3);
   width: 100%;
 }
@@ -144,7 +146,7 @@
   list-style-type: none;
 }
 
-.footer ul li a {
+.footer a {
   color: aliceblue;
 }
 
