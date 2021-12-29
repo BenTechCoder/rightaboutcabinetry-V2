@@ -1,7 +1,7 @@
 
 
 
-
+@use "theme";
 
 
 .nav-hero {
@@ -58,7 +58,7 @@
 }
 
 .nav-link:hover{
-  color: #482ff7;
+  color: #023064;
 }
 
 .nav-logo {
@@ -82,7 +82,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1rem;
+
  
 }
 
@@ -100,38 +100,12 @@
 
  }
 
-
-
-
-.portfolio{
-
-  margin: 1rem auto;
-  padding: 0.4rem;
-  display: flex;
-  flex-direction: row;
- width: 90%;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-
-}
-
-
-
-.btn {
-  justify-self: center;
-  text-align: center;
-  font-weight: bolder;
-
-  color: var(--color-3);
-  background-color: #00163d62;
-
- padding: 2rem;
- border-radius: 1rem;
-}
-
-.btn:hover {
-  background-color: var(--color-6);
+.portfolio {
+display: flex;
+color: #f9f9f9;
+background-size: cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.5)), url(/img/rac-portfolio-background.png);
+ 
 }
 
 .contact-snippet {
@@ -162,10 +136,6 @@ overflow-wrap: break-word;
   list-style-type: none;
 }
 
-.contact-snippet h3 {
-  
-  
-}
 
 .footer {
  
