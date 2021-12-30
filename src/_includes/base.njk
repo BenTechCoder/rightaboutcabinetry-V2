@@ -47,20 +47,11 @@
   </head>
   <header class="nav-hero">
     <nav class="navbar">
-      <a href="/" class="nav-logo">Right About</a>
+     <h4 class=".tdbc-h4"> <a href="/" class="nav-logo">Right About</a></h4>
       <ul class="nav-menu">
         <li class="nav-item">
           <a href="/services/" class="nav-link">Services</a>
-          <!-- <div class="dropdown">
-    <button class="dropbtn nav-link">Services
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="#">Link 1</a>
-      <a href="#">Link 2</a>
-      <a href="#">Link 3</a>
-    </div>
-    </div> -->
+         
         </li>
         <li class="nav-item">
           <a href="/portfolio" class="nav-link">Portfolio</a>
@@ -68,6 +59,7 @@
         <li class="nav-item">
           <a href="/contact" class="nav-link">Contact</a>
         </li>
+       
       </ul>
       <div class="hamburger">
         <span class="bar"></span>
@@ -79,7 +71,7 @@
     <div id="hero-id" class="hero-container">
       <header class="hero">
         <h1>{{ heroContent }}</h1>
-        <p class="hero-p">{{ heroP }}</p>
+        <h3>{{ heroP }}</h3>
       </header>
     </div>
   </header>
@@ -93,7 +85,7 @@
         <li><a href="/portfolio">Portfolio</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
-      <p style="color: goldenrod; text-decoration: underline">
+      <p>
         Built by <a href="https://www.benjaminlebron.com/">Benjamin Lebron</a>
       </p>
       <div class="credit">
@@ -111,40 +103,6 @@
       </div>
     </footer>
   </body>
-  <script>
-  
-    const hamBurger = document.querySelector(".hamburger");
-    const navMenu = document.querySelector(".nav-menu");
-    let mobileMenu = () => {
-      hamBurger.classList.toggle("active");
-      navMenu.classList.toggle("active");
-    };
-
-    hamBurger.addEventListener("click", mobileMenu);
-
-    let closeModal = document.getElementsByClassName("close")[0];
-
-closeModal.addEventListener("click", function () {
-  modal.style.display = "none";
-});
-
-let closeBtn = document.querySelector(".close-btn");
-closeBtn.onclick = function () {
-  modal.style.display = "none";
-};
-
-
-    let modal = document.querySelector(".modal");
-    let modalImg = document.querySelector(".modal-img");
-    let img = document.querySelector(".portfolio-img-container,.services-img-container");
-    let captionText = document.querySelector(".caption");
-    Array.from(img.getElementsByTagName('img')).forEach((item) => {
-      item.onclick = function () {
-        modal.style.display = "grid";
-        modalImg.alt = this.alt;
-        modalImg.src = this.src;
-        captionText.innerHTML = this.alt;
-      };
-    });
+  <script defer src="/js/script.js">
   </script>
 </html>

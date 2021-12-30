@@ -1,12 +1,12 @@
-// @use "fonts";
+
 @use "reset";
-// @use "layout";
+@use "layout";
 // @use "sitenav";
-// @use "typography";
-// @use "buttons";
-// @use "card";
-// @use "prism";
-// @use "utilities";
+@use "typography";
+ @use "buttons";
+@use "card";
+@use "prism";
+@use "utilities";
 @use "services";
 @use "not-found";
 @use "contact";
@@ -23,17 +23,10 @@
   
   
   body {
-    color: var(--color-2);
-    background-color: aliceblue;
+
     font-size: 80%;
     scroll-behavior: smooth;
-    font-family: 'Times New Roman', Times, serif !important;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-  }
-  
-  a {
-    text-decoration: none;
-     color: inherit; 
   }
