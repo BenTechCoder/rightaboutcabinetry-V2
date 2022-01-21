@@ -12,7 +12,8 @@ async function imageShortcode(src, alt, sizes) {
   let metadata = await Image(src, {
     widths: [null],
     formats: ["webp", "jpeg"],
-    outputDir: "public/img"
+    urlPath: "/img/",
+    outputDir: "public/img/"
   });
 
   let imageAttributes = {
@@ -38,7 +39,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/js");
   eleventyConfig.addPassthroughCopy("./src/css");
   eleventyConfig.addPassthroughCopy("./src/fonts");
-  eleventyConfig.addPassthroughCopy("./src/img/");
+  eleventyConfig.addPassthroughCopy("./src/img");
   eleventyConfig.addPassthroughCopy("./src/favicon.png");
 
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);

@@ -117,7 +117,13 @@
   margin: 1rem auto 1rem auto;
   background-color: #c0dffc;
   border-radius: 1rem;
+  
+img {
+  width: 10%;
+  height: auto;
 }
+}
+
 
 .contact-snippet ul {
   
@@ -127,8 +133,12 @@
 }
 
 .contact-snippet ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   list-style-type: none;
 }
+
 
 .footer {
   margin-top: auto;
