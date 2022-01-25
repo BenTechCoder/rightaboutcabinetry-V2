@@ -26,7 +26,7 @@
 
 .portfolio-img-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 2fr));
+  grid-template-columns: repeat(auto-fill, minmax(clamp(200px, 300px, 900px), 2fr));
   grid-gap: 5px;
   grid-auto-flow: dense;
   align-items: center;
