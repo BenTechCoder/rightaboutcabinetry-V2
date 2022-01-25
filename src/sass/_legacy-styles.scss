@@ -91,11 +91,14 @@
   padding: 1rem;
   transition: cubic-bezier(0.68, -0.55, 0.265, 1.55);
   transition-duration: 2s;
+
+  h2 {
+    margin-top: 1.5vw;
+  }
+
 }
 
-.h2-hero {
-  text-align: center;
-}
+
 
 .portfolio {
   text-align: center;
