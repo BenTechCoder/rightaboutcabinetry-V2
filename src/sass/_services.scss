@@ -7,10 +7,10 @@
 
 .services-img-container {
   display: grid;
-margin: 0 auto;
+  margin: 0 auto;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 2px;
-max-width: 1200px;
+  max-width: 1100px;
 
   img {
     width: 100%;
@@ -70,8 +70,13 @@ max-width: 1200px;
 .modal-content {
   margin: 0 auto;
   display: block;
-  width: 70%;
-  max-width: 700px;
+
+  width: 80%;
+  max-width: 1100px;
+}
+
+.close-btn {
+  bottom: 0;
 }
 
 /* Caption of Modal Image (Image Text) - Same Width as the Image */
@@ -129,5 +134,3 @@ max-width: 1200px;
     width: 100%;
   }
 }
-
-
