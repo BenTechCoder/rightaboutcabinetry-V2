@@ -2,12 +2,12 @@
 const navElement = document.getElementById("main-nav");
 const mobileDropdownToggle = document.querySelector('.mobile-dropdown-toggle')
 const navCloseButton = document.querySelector('.nav-close-btn')
-document.addEventListener("click", (event) => {
-  if (event.target.classList.contains("mobile-dropdown-toggle")) {
+mobileDropdownToggle.addEventListener("click", (event) => {
+
     // when we click our button, toggle a CSS class!
     navElement.classList.toggle("dropdown-opened");
     mobileDropdownToggle.classList.toggle('open')
-  }
+  
 });
 
 navCloseButton.addEventListener('click', () => {
