@@ -1,7 +1,6 @@
 @use "theme";
 
-.nav-hero {
-  
+.hero {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
     url("/img/2370612355_6f54b216ae_o (1).jpg");
   /* background-position: center; */
@@ -10,70 +9,12 @@
   position: relative;
 }
 
-.navbar {
-  z-index: 1;
-  background-color: aliceblue;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 1.5rem;
-  border-bottom: 1px solid #e2e8f0;
-}
-
-.hamburger {
-  display: none;
-}
-
-.bar {
-  display: block;
-  width: 25px;
-  height: 3px;
-  margin: 5px auto;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  background-color: var(--color-1);
-}
-
-.nav-menu {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  align-content: center;
-}
-
-.nav-item {
-  list-style-type: none;
-  text-decoration: none;
-  margin-left: 5rem;
-}
-
-.nav-link {
-  text-decoration: none;
-  font-weight: bolder;
-
-  color: var(--color-3);
-}
-
-.nav-link:hover, .nav-link:focus  {
-  text-decoration: underline;
-  color: #023064;
-}
-
-.nav-logo {
-  font-weight: bolder;
-  color: var(--color-3);
-}
-
-.nav-logo:hover, .nav-logo:focus {
-  color: #482ff7;
-}
-
 .hero-container {
   color: aliceblue;
   box-shadow: 2rem 2 rem 1rem var(--color-2);
   font-weight: 400;
   max-width: 3000px;
-padding: 1.5rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -83,7 +24,7 @@ padding: 1.5rem;
   text-shadow: #000 0.1em 0.1em 0.2em;
 }
 
-.hero {
+.hero-div {
   /* background-color: rgba(0, 0, 0, 0.4); */
 
   text-shadow: #000 0.1em 0.1em 0.2em;
@@ -94,10 +35,7 @@ padding: 1.5rem;
     text-decoration: underline;
     margin-top: 1.5vh;
   }
-
 }
-
-
 
 .portfolio {
   text-align: center;
@@ -106,8 +44,7 @@ padding: 1.5rem;
   background-size: cover;
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.5)),
     url(/img/rac-portfolio-background.png);
-
-  }
+}
 
 .contact-snippet {
   display: flex;
@@ -119,19 +56,16 @@ padding: 1.5rem;
   margin: 5vh auto 1vh auto;
   background-color: #c0dffc;
   border-radius: 1rem;
-  
-img {
-  width: 10%;
-  height: auto;
-}
-}
 
+  img {
+    width: 10%;
+    height: auto;
+  }
+}
 
 .contact-snippet ul {
-  
   overflow-wrap: break-word;
   padding-inline-start: 0px;
-
 }
 
 .contact-snippet ul li {
@@ -141,11 +75,10 @@ img {
   list-style-type: none;
 }
 
-
 .footer {
   margin-top: auto;
   text-align: center;
-color: aliceblue;
+  color: aliceblue;
   background-color: var(--color-3);
   width: 100%;
 }
@@ -164,8 +97,6 @@ color: aliceblue;
 .footer a {
   color: aliceblue;
 }
-
-
 
 .credit {
   color: aliceblue;
@@ -213,12 +144,11 @@ color: aliceblue;
   .footer ul {
     flex-direction: column;
   }
-.hero {
-  h2 {
-    margin-top: 4vh;
+  .hero {
+    h2 {
+      margin-top: 4vh;
+    }
   }
-}
-
 }
 
 @media screen and (min-width: 600px) {
@@ -240,8 +170,5 @@ color: aliceblue;
   }
   .contact ul {
     flex-direction: column;
-  }
-  #email {
-    font-size: 2rem;
   }
 }

@@ -1,11 +1,19 @@
-const hamBurger = document.querySelector(".hamburger");
-const navMenu = document.querySelector(".nav-menu");
-let mobileMenu = () => {
-  hamBurger.classList.toggle("active");
-  navMenu.classList.toggle("active");
-};
 
-hamBurger.addEventListener("click", mobileMenu);
+const navElement = document.getElementById("main-nav");
+const mobileDropdownToggle = document.querySelector('.mobile-dropdown-toggle')
+const navCloseButton = document.querySelector('.nav-close-btn')
+document.addEventListener("click", (event) => {
+  if (event.target.classList.contains("mobile-dropdown-toggle")) {
+    // when we click our button, toggle a CSS class!
+    navElement.classList.toggle("dropdown-opened");
+    mobileDropdownToggle.classList.toggle('open')
+  }
+});
+
+navCloseButton.addEventListener('click', () => {
+  navElement.classList.toggle("dropdown-opened");
+  mobileDropdownToggle.classList.toggle('open')
+})
 
 let closeModal = document.getElementsByClassName("close")[0];
 

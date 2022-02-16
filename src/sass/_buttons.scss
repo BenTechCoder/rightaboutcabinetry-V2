@@ -35,6 +35,12 @@
     font-size: 1rem;
   }
 
+  &--large {
+    min-height: 34px;
+    font-size: 1.80rem;
+    padding: 0.30em 1.6em;
+  }
+
   &--center {
     align-self: center;
     margin-right: auto;
@@ -77,6 +83,7 @@
     @if ($key != "primary") {
       &--#{$key} {
         background-color: $color;
+        
 
         @if ($key == "light") {
           color: tdbc-color("dark");
