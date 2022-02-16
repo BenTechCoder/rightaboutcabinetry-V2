@@ -9,13 +9,103 @@
   overflow: hidden;
 }
 
-.navbar {
+nav {
+  display: flex;
+  align-items: center;
+  padding: 2.7vh;
+  font-weight: bold;
+  margin: 0 1rem;
+justify-content: space-between;
+}
+
+.logo {
+  color: $tdbc-color-primary;
+font-weight: bolder;
+  text-decoration: underline;
 
 }
 
-.hamburger {
+.dropdown-link-container > a {
+  margin-left: 22px; /* space out all our links */
+}
+
+.mobile-dropdown-toggle {
+  border: none;
+  background: none;
+  display: none; /* hide our hamburger button until we're on mobile */
+}
+
+.nav-close-div {
   display: none;
 }
+
+.nav-link {
+  text-decoration: none;
+}
+
+.nav-link:hover, .nav-link:focus  {
+  text-decoration: underline;
+  color: #023064;
+}
+.logo:hover, .logo:focus {
+  color: #482ff7;
+}
+
+
+@media (max-width: 768px) {
+nav {
+  margin: 0;
+}
+  .dropdown-link-container {
+    padding-left: 7vw;
+    padding-right: 7vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    /* fix nav height on mobile safari, where 100vh is a little off */
+    height: -webkit-fill-available;
+    /* then, arrange our links top to bottom */
+    display: flex;
+    flex-direction: column;
+    /* center links vertically, push to the right horizontally.
+       this means our links will line up with the rightward hamburger button */
+    justify-content:space-around;
+    align-items: flex-end;
+    z-index: 0;
+    opacity: 0; /* fade out */
+    transform: translateY(-100%); /* move out of view */
+    transition: transform 0.2s, opacity 0.2s; /* transition these smoothly */
+    background: #fff;
+  }
+
+.nav-link {
+  font-size: 2.2rem;
+}
+
+  nav.dropdown-opened > .dropdown-link-container{
+    z-index: 1;
+    opacity: 1; /* fade in */
+    transform: translateY(0); /* move into view */
+  }
+  
+
+  .logo,
+  .mobile-dropdown-toggle {
+    z-index: 2;
+  }
+  .mobile-dropdown-toggle {
+    display: initial;
+  }
+  .nav-close-div {
+    display: flex;
+    text-align: center;
+    align-content: flex-end;
+  }
+}
+
+// hamburger icon animation
 
 .bar-1,
 .bar-2,
@@ -39,37 +129,6 @@
   transform: translateX(0);
 }
 
-.nav-menu {
-
-}
-
-.nav-item {
-
-}
-
-.nav-link {
-  text-decoration: none;
-  font-weight: bolder;
-
-  color: var(--color-3);
-}
-
-.nav-link:hover,
-.nav-link:focus {
-  text-decoration: underline;
-  color: #023064;
-}
-
-.nav-logo {
-  font-weight: bolder;
-  color: var(--color-3);
-}
-
-.nav-logo:hover,
-.nav-logo:focus {
-  color: #482ff7;
-}
-
 .open {
   .bar-1 {
     transform: rotate(40deg);
@@ -80,23 +139,5 @@
   }
   .bar-3 {
     transform: rotate(-38deg);
-  }
-}
-
-@media only screen and (max-width: 768px) {
- 
-  .active {
-    opacity: 1; /* fade in */
-    transform: translateY(0); /* move into view */
-  }
-
-
-
-  .hamburger {
-    background: none;
-    border: none;
-    border: none;
-    display: block;
-    cursor: pointer;
   }
 }
