@@ -1,5 +1,11 @@
 @use "theme" as *;
 
+// special thanks to andy bell for the flow utility
+
+.flow > * + * {
+  margin-top: var(--flow-space, 1em);
+}
+
 .tdbc-content-maxlength {
   max-width: 80ch;
 }
