@@ -1,0 +1,143 @@
+@use "theme" as *;
+
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  padding: 2.7vh;
+  font-weight: bold;
+  margin: 0 1rem;
+justify-content: space-between;
+}
+
+.logo {
+  color: $tdbc-color-primary;
+font-weight: bolder;
+  text-decoration: underline;
+
+}
+
+.dropdown-link-container > a {
+  margin-left: 22px; /* space out all our links */
+}
+
+.mobile-dropdown-toggle {
+  border: none;
+  background: none;
+  display: none; /* hide our hamburger button until we're on mobile */
+}
+
+.nav-close-div {
+  display: none;
+}
+
+.nav-link {
+  text-decoration: none;
+}
+
+.nav-link:hover, .nav-link:focus  {
+  text-decoration: underline;
+  color: #023064;
+}
+.logo:hover, .logo:focus {
+  color: #482ff7;
+}
+
+
+@media (max-width: 768px) {
+nav {
+  margin: 0;
+}
+  .dropdown-link-container {
+    padding-left: 7vw;
+    padding-right: 7vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    /* fix nav height on mobile safari, where 100vh is a little off */
+    height: -webkit-fill-available;
+    /* then, arrange our links top to bottom */
+    display: flex;
+    flex-direction: column;
+    /* center links vertically, push to the right horizontally.
+       this means our links will line up with the rightward hamburger button */
+    justify-content:space-around;
+    align-items: flex-end;
+    z-index: 0;
+    opacity: 0; /* fade out */
+    transform: translateY(-100%); /* move out of view */
+    transition: transform 0.2s, opacity 0.2s; /* transition these smoothly */
+    background: #fff;
+  }
+
+.nav-link {
+  font-size: 2.2rem;
+}
+
+  nav.dropdown-opened > .dropdown-link-container{
+    z-index: 1;
+    opacity: 1; /* fade in */
+    transform: translateY(0); /* move into view */
+  }
+  
+
+  .logo,
+  .mobile-dropdown-toggle {
+    z-index: 2;
+  }
+  .mobile-dropdown-toggle {
+    display: initial;
+  }
+  .nav-close-div {
+    display: flex;
+    text-align: center;
+    align-content: flex-end;
+  }
+}
+
+// hamburger icon animation
+
+.bar-1,
+.bar-2,
+.bar-3 {
+  width: 2rem;
+  height: 0.25rem;
+  border-radius: 10px;
+  position: relative;
+  transform-origin: 1px;
+  margin: 5px auto;
+  background-color: $tdbc-color-primary;
+  transition: all 0.3s linear;
+}
+
+.bar-1,
+.bar-3 {
+  transform: rotate(0);
+}
+.bar-2 {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.open {
+  .bar-1 {
+    transform: rotate(40deg);
+  }
+  .bar-2 {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  .bar-3 {
+    transform: rotate(-38deg);
+  }
+}

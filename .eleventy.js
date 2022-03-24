@@ -12,7 +12,8 @@ async function imageShortcode(src, alt, sizes) {
   let metadata = await Image(src, {
     widths: [null],
     formats: ["webp", "jpeg"],
-    outputDir: "public/img"
+    urlPath: "/img/",
+    outputDir: "public/img/"
   });
 
   let imageAttributes = {

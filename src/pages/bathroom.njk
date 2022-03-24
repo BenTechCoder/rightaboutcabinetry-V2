@@ -2,6 +2,7 @@
 title: "Bathroom Remodel"
 description: "Right About Cabinetry Offers Bathroom Remodels. Take a look at our portfolio of Bathroom Remodels"
 heroContent: "Bathroom Remodel"
+heroP: "Making your bathroom look it's best"
 ---
 
 <header class="tdbc-container tdbc-text-align--center">
@@ -12,10 +13,11 @@ heroContent: "Bathroom Remodel"
 <!--MODAL IMAGE LIBRARY HERE  -->
 
 <section class="services-img-container">
-  {% image "public/img/WhatsApp Image 2021-10-06 at 2.20.23 PM.webp", "Bathroom with shower" %} 
-  {% image "public/img/WhatsApp Image 2021-10-09 at 7.34.57 PM.webp", "White bathroom with sink" %} 
-  {% image "public/img/messages_0 (1).webp", "Bathroom with brown sink" %} 
-  {% image "public/img/WhatsApp Image 2021-10-14 at 9.38.02 AM.webp", "Brown bathroom sink" %}
+  {% image "src/img/WhatsApp Image 2021-10-06 at 2.20.23 PM.webp", "Bathroom with shower" %} 
+   {% image "src/img/WhatsApp Image 2022-01-30 at 4.18.20 PM.webp", "White Bathroom sink with marble countertop" %}
+  {% image "src/img/WhatsApp Image 2021-10-09 at 7.34.57 PM.webp", "White bathroom with sink" %} 
+  {% image "src/img/messages_0 (1).webp", "Bathroom with brown sink" %} 
+ {% image "src/img/WhatsApp Image 2022-01-30 at 4.18.20 PM (1).webp", "Brown bathroom sink" %}
   <!-- The Modal -->
   <div class="modal">
     <!-- The Close Button -->
@@ -36,18 +38,4 @@ heroContent: "Bathroom Remodel"
 
 <!-- Contact component -->
 
-<section class="call2-container">
-  <section class="contact-snippet" id="contact-nav">
-    <div class="contact-snippet-container">
-      <h2 class="h2-hero">Let's Rebuild Your Bathroom</h2>
-      <h3>Contact us at:</h3>
-      <ul class="hero-p">
-        <li><i class="fas fa-phone"></i>(919)-400-3907</li>
-        <li><i class="fas fa-phone"></i>(919)-830-4224</li>
-        <li id="email">
-          <a href="mailto:rightaboutcabinetry@gmail.com">RightAboutCabinetry@gmail.com</a>
-        </li>
-      </ul>
-    </div>
-  </section>
-</section>
+{% include "_partials/contact-snippet.njk" %}

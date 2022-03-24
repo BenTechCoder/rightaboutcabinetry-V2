@@ -45,40 +45,39 @@
       href="/feed/"
     />
   </head>
-  <header class="nav-hero">
-    <nav class="navbar">
-     <h4 class=".tdbc-h4"> <a href="/" class="nav-logo">Right About</a></h4>
-      <ul class="nav-menu">
-        <li class="nav-item">
-          <a href="/services/" class="nav-link">Services</a>
-         
-        </li>
-        <li class="nav-item">
+
+    <nav id="main-nav">
+<a href="/" class="logo"><h3 class="logo">Right About</h3></a>
+  <button class="mobile-dropdown-toggle" aria-hidden="true">
+           <div class="bar-1"></div>
+           <div class="bar-2"></div>
+           <div class="bar-3"></div>
+    </button>
+      <div class="dropdown-link-container">
+          <a href="/services" class="nav-link">Services</a>
+   
           <a href="/portfolio" class="nav-link">Portfolio</a>
-        </li>
-        <li class="nav-item">
+        
           <a href="/contact" class="nav-link">Contact</a>
-        </li>
-        <li class="nav-item">
-          <a href="/about" class="nav-link">About</a>
-        </li>
-      </ul>
-      <div class="hamburger">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
+
+     <div class="nav-close-div">     
+       <button class="tdbc-button tdbc-button--large tdbc-button--secondary nav-close-btn">Close</button></div>
       </div>
+
     </nav>
 
+    <header class="hero tdbc-section--padded">
     <div id="hero-id" class="hero-container">
-      <header class="hero">
+      <div class="hero-div">
         <h1>{{ heroContent }}</h1>
-        <h3>{{ heroP }}</h3>
-      </header>
+        <h2 class="tdbc-h3">{{ heroP }}</h2>
     </div>
   </header>
   <body class="body">
-    {{ content | safe }}
+    <main>
+      {{ content | safe }}
+    </main>
+ 
 
     <footer class="footer">
       <ul>
@@ -86,7 +85,6 @@
         <li><a href="/services">Services</a></li>
         <li><a href="/portfolio">Portfolio</a></li>
         <li><a href="/contact">Contact</a></li>
-        <li><a href="/about">About</a></li>
       </ul>
       <p>
         Built by <a href="https://www.benjaminlebron.com/">Benjamin Lebron</a>
@@ -108,4 +106,9 @@
   </body>
   <script defer src="/js/script.js">
   </script>
+    <script
+    data-goatcounter="https://benlebron.goatcounter.com/count"
+    async
+    src="//gc.zgo.at/count.js"
+  ></script>
 </html>
