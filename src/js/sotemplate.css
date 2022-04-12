@@ -31,7 +31,7 @@ h1 {
 }
 
 p {
-  clamp(1.89rem, calc(1.71rem + 0.89vw), 2.34rem);
+  font-size: (1.89rem, calc(1.71rem + 0.89vw), 2.34rem);
 }
 
 
