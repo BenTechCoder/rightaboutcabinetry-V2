@@ -3,18 +3,15 @@
 body {
     font-family: 'Manrope', sans-serif;
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
-    url("public/img/2370612355_6f54b216ae_o (1).jpg");
+    url("public/img/2370612355_6f54b216ae_o\ \(1\).jpg");
   /* background-position: center; */
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem; 
 }
 
-div {
-    max-width: 1200px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem; 
-}
 
