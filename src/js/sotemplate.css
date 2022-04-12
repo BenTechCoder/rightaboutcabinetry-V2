@@ -7,12 +7,27 @@ body {
   /* background-position: center; */
   background-repeat: no-repeat;
   background-size: cover;
-  max-width: 1200px;
+
 }
 
 div {
-    display: flex;
-  justify-content: space-between;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 1rem; 
+  justify-content: center;
+  align-content: center;
+  color: white;
 }
+
+h1 {
+  font-size: clamp(3.27rem, calc(2.75rem + 2.56vw), 4.58rem);
+  font-weight: bolder;
+}
+
+p {
+  clamp(1.89rem, calc(1.71rem + 0.89vw), 2.34rem)
+}
+
+
+
