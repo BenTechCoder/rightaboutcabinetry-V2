@@ -8,10 +8,11 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   max-width: 1200px;
-  display: flex;
+}
+
+div {
+    display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1rem; 
 }
-
-
