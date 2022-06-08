@@ -1,8 +1,8 @@
 module.exports = {
   url: process.env.URL || "http://localhost:8080",
-  siteName: "Eliel Abreu: Right About Cabinetry and Woodwork",
+  siteName: "Right About Cabinetry and Woodworks",
   siteDescription:
-    "rightaboutshop.com: The official website of Right About Cabinetry and Eliel Abreu, making Quality cabinets in North Carolina",
-  authorName: "Stephanie Eckles",
+    "rightaboutshop - The official website of Right About Cabinetry and Woodworks, making Quality Woodworks in North Carolina",
+  authorName: "Eliel Abreu",
   // twitterUsername: "5t3ph", // no `@`
 };
