@@ -1,6 +1,6 @@
 ---
 title: "Bathroom with brown sink"
-image: "src/img/WhatsApp-Image 2021-10-16-at-3.53.21-PM.webp"
+image: "src/img/messages_0 (1).webp"
 tag:
 - bathroom
 ---
