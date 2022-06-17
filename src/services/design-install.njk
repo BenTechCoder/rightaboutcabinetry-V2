@@ -12,8 +12,13 @@ heroP: "Have something in mind? We're here to help"
 
 <!--MODAL IMAGE LIBRARY HERE  -->
 <section class="services-img-container">
-  {% image "src/img/WhatsApp Image 2021-10-09 at 7.54.30 PM.webp", "White Fireplace" %}
-   {% image "src/img/WhatsApp-Image 2021-10-16-at-3.53.21-PM.webp", "White complete Desk" %}
+   {% asyncEach item in collections.portfolio %}
+    {% if "design-install" in item.data.tag %}
+      {% image item.data.image, item.data.title %}
+    {% endif %}
+  {% endeach %}
+  {# {% image "src/img/WhatsApp Image 2021-10-09 at 7.54.30 PM.webp", "White Fireplace" %}
+   {% image "src/img/WhatsApp-Image 2021-10-16-at-3.53.21-PM.webp", "White complete Desk" %} #}
 
   <!-- The Modal -->
   <div class="modal">

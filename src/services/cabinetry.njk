@@ -12,9 +12,15 @@ heroP: "Beautiful cabinets at the right price"
 
 <!--MODAL IMAGE LIBRARY HERE  -->
 <section class="services-img-container">
+ {% asyncEach item in collections.portfolio %}
+    {% if "cabinetry" in item.data.tag %}
+      {% image item.data.image, item.data.title %}
+    {% endif %}
+  {% endeach %}
+{# 
   {% image "src/img/WhatsApp Image 2021-10-09 at 7.47.59 PM.webp", "Brown Dresser Cabinet" %} 
   {% image "src/img/WhatsApp Image 2021-10-06 at 1.43.13 PM (1).webp", "Light Brown Display Cabinet" %} {% image "src/img/WhatsApp-Image 2021-10-16-at-3.53.21-PM.webp", "White complete Desk" %} {%
-  image "src/img/messages_0 (3).webp", "Full kitchen Cabinets" %}
+  image "src/img/messages_0 (3).webp", "Full kitchen Cabinets" %} #}
 
   <!-- The Modal -->
   <div class="modal">
