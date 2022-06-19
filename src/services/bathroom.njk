@@ -13,11 +13,17 @@ heroP: "Making your bathroom look it's best"
 <!--MODAL IMAGE LIBRARY HERE  -->
 
 <section class="services-img-container">
-  {% image "src/img/WhatsApp Image 2021-10-06 at 2.20.23 PM.webp", "Bathroom with shower" %} 
+   {% asyncEach item in collections.portfolio %}
+    {% if "bathroom" in item.data.tag %}
+      {% image item.data.image, item.data.title %}
+    {% endif %}
+  {% endeach %}
+
+  {# {% image "src/img/WhatsApp Image 2021-10-06 at 2.20.23 PM.webp", "Bathroom with shower" %} 
    {% image "src/img/WhatsApp Image 2022-01-30 at 4.18.20 PM.webp", "White Bathroom sink with marble countertop" %}
   {% image "src/img/WhatsApp Image 2021-10-09 at 7.34.57 PM.webp", "White bathroom with sink" %} 
   {% image "src/img/messages_0 (1).webp", "Bathroom with brown sink" %} 
- {% image "src/img/WhatsApp Image 2022-01-30 at 4.18.20 PM (1).webp", "Brown bathroom sink" %}
+ {% image "src/img/WhatsApp Image 2022-01-30 at 4.18.20 PM (1).webp", "Brown bathroom sink" %} #}
   <!-- The Modal -->
   <div class="modal">
     <!-- The Close Button -->

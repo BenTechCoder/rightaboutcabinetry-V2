@@ -1,7 +1,7 @@
 ---
 description: "Right About Cabinetry Does general Carpentry. Take a look at our portfolio of custom Carpentry"
-title: "General Carpentry"
-heroContent: "Carpentry"
+title: "Woodwork"
+heroContent: "Woodwork"
 heroP: "Custom woodwork for any customer"
 ---
 
@@ -11,9 +11,16 @@ heroP: "Custom woodwork for any customer"
 </header>
 
 <section class="services-img-container">
-  {% image "src/img/WhatsApp Image 2021-10-09 at 7.54.30 PM.webp", "White Fireplace" %} {% image
+
+   {% asyncEach item in collections.portfolio %}
+    {% if "woodwork" in item.data.tag %}
+      {% image item.data.image, item.data.title %}
+    {% endif %}
+  {% endeach %}
+
+  {# {% image "src/img/WhatsApp Image 2021-10-09 at 7.54.30 PM.webp", "White Fireplace" %} {% image
   "src/img/messages_0 (4).webp", "White Kitchen island and table" %} {% image
-  "src/img/messages_0 (2).webp", "White Kitchen island" %}
+  "src/img/messages_0 (2).webp", "White Kitchen island" %} #}
 
   <!-- The Modal -->
   <div class="modal">

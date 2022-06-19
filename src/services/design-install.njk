@@ -1,19 +1,24 @@
 ---
-title: "Design & Installation"
+title: "Design and Installation"
 description: "Right About Cabinetry Offers Custom designs and installation. Take a look at our portfolio of custom designed items"
-heroContent: "Design & Installation"
+heroContent: "Design and Installation"
 heroP: "Have something in mind? We're here to help"
 ---
 
 <header class="tdbc-container tdbc-text-align--center">
-<h2>Design & Installation makes your project a reality</h2>
+<h2>Design and Installation makes your project a reality</h2>
   <p>Click on the images to expand</p>
 </header>
 
 <!--MODAL IMAGE LIBRARY HERE  -->
 <section class="services-img-container">
-  {% image "src/img/WhatsApp Image 2021-10-09 at 7.54.30 PM.webp", "White Fireplace" %}
-   {% image "src/img/WhatsApp-Image 2021-10-16-at-3.53.21-PM.webp", "White complete Desk" %}
+   {% asyncEach item in collections.portfolio %}
+    {% if "design-install" in item.data.tag %}
+      {% image item.data.image, item.data.title %}
+    {% endif %}
+  {% endeach %}
+  {# {% image "src/img/WhatsApp Image 2021-10-09 at 7.54.30 PM.webp", "White Fireplace" %}
+   {% image "src/img/WhatsApp-Image 2021-10-16-at-3.53.21-PM.webp", "White complete Desk" %} #}
 
   <!-- The Modal -->
   <div class="modal">
