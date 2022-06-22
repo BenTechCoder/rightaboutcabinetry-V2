@@ -7,7 +7,7 @@ body {
   min-height: 100vh;
   background-color: tdbc-color("background");
   color: $tdbc-color-body;
-  font-family: $tdbc-font-family;
+  font-family: $base-font-family;
 }
 
 // stylelint-disable selector-max-type, selector-no-qualifying-type

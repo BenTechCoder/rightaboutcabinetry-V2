@@ -37,38 +37,12 @@ $tdbc-alignments: left, center, right !default;
   }
 }
 
-@each $key in $tdbc-background-colors {
-  .tdbc-background--#{$key} {
-    background-color: tdbc-color($key);
-  }
-}
-
-@each $key in $tdbc-ink-colors {
-  .tdbc-ink--#{$key},
-  a.tdbc-ink--#{$key} {
-    color: tdbc-color(#{$key});
-  }
-
-  .tdbc-ink--#{$key} > a:not(.tdbc-button) {
-    color: inherit;
-  }
-}
 
 .tdbc-mx-auto {
   margin-right: auto;
   margin-left: auto;
 }
 
-@each $key, $unit in $tdbc-spacing {
-  .tdbc-my-#{$key} {
-    margin-top: $unit;
-    margin-bottom: $unit;
-  }
-
-  .tdbc-mt-#{$key} {
-    margin-top: $unit;
-  }
-}
 
 .tdbc-mb-none {
   margin-bottom: 0;

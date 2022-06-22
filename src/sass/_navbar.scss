@@ -19,7 +19,7 @@ justify-content: space-between;
 }
 
 .logo {
-  color: $tdbc-color-primary;
+  color: $primary;
 font-weight: bolder;
   text-decoration: underline;
 
@@ -116,7 +116,7 @@ nav {
   position: relative;
   transform-origin: 1px;
   margin: 5px auto;
-  background-color: $tdbc-color-primary;
+  background-color: $primary;
   transition: all 0.3s linear;
 }
 
