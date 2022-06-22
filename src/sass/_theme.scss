@@ -1,23 +1,24 @@
-$tdbc-color-primary: #040710 !default;
-$tdbc-color-secondary: #023064!default;
-$tdbc-color-background: #f9f9f9 !default;
+$primary: #023064 !default;
+$secondary: #00163D !default;
+$light: #F9F9F9 !default;
+$dark: #040710 !default;
+$accent: #6E9BC5 !default;
 
 $tdbc-brand-colors: (
-  "primary": $tdbc-color-primary,
-  "secondary": $tdbc-color-secondary,
+  "primary": $primary,
+  "secondary": $secondary,
 ) !default;
 
-$tdbc-color-body: scale-color($tdbc-color-primary, $lightness: -30%, $saturation: -50%) !default;
-$tdbc-color-gray: mix(#767676, $tdbc-color-body, 70%) !default;
+$tdbc-color-body: scale-color($primary, $lightness: -30%, $saturation: -50%) !default;
+// $tdbc-color-gray: mix(#767676, $tdbc-color-body, 70%) !default;
 
 $tdbc-colors: map-merge(
   $tdbc-brand-colors,
   (
     "text": $tdbc-color-body,
-    "background": $tdbc-color-background,
+    "background": $light,
     "light": #fff,
     "dark": rgba(black, 0.87),
-    "gray": $tdbc-color-gray,
   )
 );
 
@@ -29,20 +30,13 @@ $tdbc-colors: map-merge(
 $tdbc-ink-colors: "primary", "secondary", "text", "gray", "light", "dark" !default;
 
 // Add/remove to selectively generate `background` (text color) classes
-$tdbc-background-colors: "primary", "secondary", "background", "gray", "light" !default;
+// $tdbc-background-colors: "primary", "secondary", "background", "gray", "light" !default;
 
 $tdbc-button-variants: "primary", "secondary", "light", "gray" !default;
 $tdbc-link-color: tdbc-color("primary") !default;
 $tdbc-border-radius: 8px !default;
 
-$tdbc-font-family: 'Times New Roman', Times, serif !default;
-$tdbc-strong-font-weight: 500 !default;
-$tdbc-h1-font-size: 4.2rem !default;
-$tdbc-h2-font-size: 3.15rem !default;
-$tdbc-h3-font-size: 2rem !default;
-$tdbc-h4-font-size: 1.35rem !default;
-$tdbc-text-font-size: 1.25rem !default;
-$tdbc-lead-font-size: 1.45rem !default;
+$base-font-family: 'Merriweather', serif !default;
 
 $tdbc-spacing: (
   sm: 1rem,
