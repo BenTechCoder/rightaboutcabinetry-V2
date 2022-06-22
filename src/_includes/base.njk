@@ -46,8 +46,8 @@
     />
   </head>
 
-    <nav id="main-nav">
-<a href="/" class="logo"><h3 class="logo">Right About</h3></a>
+  <div><nav id="main-nav">
+<a href="/" class="logo"><p class="logo">Right About</p></a>
   <button class="mobile-dropdown-toggle" aria-hidden="true">
            <div class="bar-1"></div>
            <div class="bar-2"></div>
@@ -70,9 +70,11 @@
     <div id="hero-id" class="hero-container">
       <div class="hero-div">
         <h1>{{ heroContent }}</h1>
-        <h2 class="tdbc-h3">{{ heroP }}</h2>
+        <p>{{ heroP }}</p>
     </div>
   </header>
+  </div>
+    
   <body class="body">
     <main>
       {{ content | safe }}
@@ -80,16 +82,28 @@
  
 
     <footer class="footer">
+      <h5>Right about Cabinetry & Woodworks LLC<h5>
+      <p>
+        Built by <a href="https://www.benjaminlebron.com/">Benjamin Lebron</a>
+      </p>
+       <ul>
+          <li><a href="tel:9194003907">(919)-400-3907</a></li>
+          <li><a href="tel:9198304224">(919)-830-4224</a></li>
+          <li id="email">
+            <a href="mailto:rightaboutcabinetry@gmail.com">
+           rightaboutcabinetry@gmail.com
+           </a>
+          </li>
+        </ul>
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/services/">Services</a></li>
         <li><a href="/portfolio/">Portfolio</a></li>
         <li><a href="/contact/">Contact</a></li>
       </ul>
-      <p>
-        Built by <a href="https://www.benjaminlebron.com/">Benjamin Lebron</a>
-      </p>
-      <div class="credit">
+
+      {# DEAL WITH THIS LATER #}
+      {# <div class="credit">
         Icons made by
         <a href="https://www.freepik.com" title="Freepik">Freepik</a> from
         <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
@@ -101,8 +115,9 @@
         >
         from
         <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
-      </div>
+      </div> #}
     </footer>
+
      <script defer src="/js/script.js"></script>
   </body>
 </html>

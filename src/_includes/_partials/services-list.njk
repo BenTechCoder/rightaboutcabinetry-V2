@@ -5,19 +5,19 @@
   <p>We offer many services, if you have a question contact us</p>
     <ul class="tdbc-column-container">
       <li class="tdbc-card">
-        <img src="/img/cabinet.svg" alt="Cabinet" />
+        <img src="/img/carpenter.svg" alt="Cabinet" />
         <div class="tdbc-card__content">
           <a class="tdbc-card__title" href="/services/cabinetry/"> Cabinetry </a>
         </div>
       </li>
       <li class="tdbc-card">
-        <img src="/img/circular.svg" alt="Carpentry" />
+        <img src="/img/saw.svg" alt="Woodworking" />
         <div class="tdbc-card__content">
           <a class="tdbc-card__title" href="/services/woodwork/"> Woodwork </a>
         </div>
       </li>
       <li class="tdbc-card">
-        <img src="/img/graphic-design.svg" alt="Design and Installation" />
+        <img src="/img/compass.svg" alt="Design and Installation" />
         <div class="tdbc-card__content">
           <a class="tdbc-card__title" href="/services/design-install/"> Design and installation </a>
       </li>
@@ -27,10 +27,12 @@
           <a class="tdbc-card__title" href="/services/bathroom/">Bathroom Remodels </a>
         </div>
       </li>
-        <li class="tdbc-card">
-        <div class="tdbc-card__content">
-          <a class="tdbc-card__title" href="/services/">See all</a>
-        </div>
-      </li>
-    </ul>
+      {% if '/services/' not in page.url %}
+  <li class="tdbc-card">
+  <div class="tdbc-card__content">
+   <a class="tdbc-card__title" href="/services/">See all</a>
+  </div>
+  </li>
+      {% endif %}
+  </ul>
   </div>

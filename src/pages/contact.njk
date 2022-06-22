@@ -23,30 +23,5 @@ description: "Want to work with Right About Cabinetry? Contact Us with our form 
     </div>
   </section>
 
-<section class="form-container">
- <form action="https://formsubmit.co/rightaboutcabinetry@gmail.com" method="POST"  class="contact-form">
-  <h2>Contact Us</h2>
-  <div class="form-group flow">
-     <div class="form-entry">
-        <label for="form-name">Name:</label>
-        <input type="text" name="Name" placeholder="Name" id="form-name" required>
-     
-     </div>
-    <div class="form-entry">
-        <label for="form-email">Email Address:</label>
-        <input type="email" name="email" id="form-email" placeholder="email@example.com"> 
-    </div>
-     <div class="form-entry">
-        <label for="form-phone">Phone Number:</label>
-        <input type="text" name="phone-number" id="form-phone" placeholder="Phone Number">
+{% include "_partials/contact-form.njk" %}
 
-     </div> 
-     <div class="form-entry">
-        <label for="form-textarea">Describe your idea</label>
-        <textarea name="message" id="form-textarea" cols="30" rows="10" placeholder="Answer here"></textarea>
-       
-     </div> 
-     <button type="submit" class="form-btn">Submit</button>
-  </div>
-    </form>
-</section>
