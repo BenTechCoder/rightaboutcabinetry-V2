@@ -1,4 +1,5 @@
 @use "global" as *;
+@use "tokens" as *;
 
 /* @link https://utopia.fyi/type/calculator?c=320,16,1.2,1140,20,1.333,6,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
 
@@ -82,6 +83,10 @@
     ((var(--f-6-min) / 16) * 1rem) + (var(--f-6-max) - var(--f-6-min)) *
       var(--fluid-bp)
   );
+}
+
+h1,h2,h3,h4,h5 {
+  line-height: 1.2;
 }
 
 h1 {
