@@ -138,7 +138,7 @@ strong {
 }
 
 a:not(.tdbc-button) {
-  color: $tdbc-link-color;
+  color: $accent;
 }
 
 code:not([class*="language"]) {
@@ -177,7 +177,7 @@ blockquote {
 }
 
 
-.tdbc-list-unstyled {
+.list-unstyled {
   list-style: none;
   padding: 0;
 }
