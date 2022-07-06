@@ -45,36 +45,41 @@
       href="/feed/"
     />
   </head>
-
-  <div><nav id="main-nav">
-<a href="/" class="logo"><p class="logo">Right About</p></a>
-  <button class="mobile-dropdown-toggle" aria-hidden="true">
-           <div class="bar-1"></div>
-           <div class="bar-2"></div>
-           <div class="bar-3"></div>
-    </button>
-      <div class="dropdown-link-container">
-          <a href="/services/" class="nav-link">Services</a>
-   
-          <a href="/portfolio/" class="nav-link">Portfolio</a>
-        
-          <a href="/contact/" class="nav-link">Contact</a>
-
-     <div class="nav-close-div">     
-       <button class="tdbc-button tdbc-button--large tdbc-button--secondary nav-close-btn">Close</button></div>
+<div class="background-img-hero">
+  
+    <div class="shade">
+      <nav id="main-nav">
+  <a href="/" class="logo"><p class="logo">Right About</p></a>
+    <button class="mobile-dropdown-toggle" aria-hidden="true">
+             <div class="bar-1"></div>
+             <div class="bar-2"></div>
+             <div class="bar-3"></div>
+      </button>
+        <div class="dropdown-link-container">
+            <a href="/services/" class="nav-link">Services</a>
+     
+            <a href="/portfolio/" class="nav-link">Portfolio</a>
+          
+            <a href="/contact/" class="nav-link">Contact</a>
+  
+       <div class="nav-close-div">     
+         <button class="tdbc-button tdbc-button--large tdbc-button--secondary nav-close-btn">Close</button></div>
+        </div>
+  
+      </nav>
+  
+      <header class="hero tdbc-section--padded [ flow ] [ color-light ]">
+         {# {% image "src/img/2370612355_6f54b216ae_o.webp", "woodshop" %} #}
+      <div id="hero-id" class="hero-inner">
+        <div class="hero-div">
+          <h1>{{ heroContent }}</h1>
+          <p>{{ heroP }}</p>
       </div>
-
-    </nav>
-
-    <header class="hero tdbc-section--padded">
-    <div id="hero-id" class="hero-container">
-      <div class="hero-div">
-        <h1>{{ heroContent }}</h1>
-        <p>{{ heroP }}</p>
+        
+    </header>
     </div>
-  </header>
-  </div>
-    
+      
+</div>
   <body class="body">
     <main>
       {{ content | safe }}

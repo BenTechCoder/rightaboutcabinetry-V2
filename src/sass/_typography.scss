@@ -137,9 +137,9 @@ strong {
   font-weight: 700;
 }
 
-a:not(.tdbc-button) {
-  color: $accent;
-}
+// a:not(.tdbc-button) {
+//   color: $accent;
+// }
 
 code:not([class*="language"]) {
   display: inline-flex;

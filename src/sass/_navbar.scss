@@ -3,6 +3,7 @@
 
 
 nav {
+  color: $light;
   display: flex;
   align-items: center;
   padding: 2.7vh;
@@ -12,7 +13,7 @@ justify-content: space-between;
 }
 
 .logo {
-color: $primary;
+  color: $light;
 font-weight: bolder;
 text-decoration: underline;
 margin: 0;
@@ -33,15 +34,16 @@ margin: 0;
 }
 
 .nav-link {
+  color: $light;
   text-decoration: none;
 }
 
 .nav-link:hover, .nav-link:focus  {
   text-decoration: underline;
-  color: #023064;
+  color: $accent;
 }
 .logo:hover, .logo:focus {
-  color: $secondary;
+  color: $accent;
 }
 
 
@@ -70,19 +72,22 @@ nav {
     opacity: 0; /* fade out */
     transform: translateY(-100%); /* move out of view */
     transition: transform 0.2s, opacity 0.2s; /* transition these smoothly */
-    background: #fff;
+    background: $light;
   }
 
 .nav-link {
+  color: $dark;
   font-size: 2.2rem;
 }
 
   nav.dropdown-opened > .dropdown-link-container{
+    color: $dark;
     z-index: 1;
     opacity: 1; /* fade in */
     transform: translateY(0); /* move into view */
   }
   
+ 
 
   .logo,
   .mobile-dropdown-toggle {
@@ -109,7 +114,7 @@ nav {
   position: relative;
   transform-origin: 1px;
   margin: 5px auto;
-  background-color: $primary;
+  background-color: $light;
   transition: all 0.3s linear;
 }
 
@@ -124,13 +129,15 @@ nav {
 
 .open {
   .bar-1 {
-    transform: rotate(40deg);
+    background-color: $dark;
+    transform: rotate(44deg);
   }
   .bar-2 {
     opacity: 0;
     transform: translateX(20px);
   }
   .bar-3 {
-    transform: rotate(-38deg);
+    background-color: $dark;
+    transform: rotate(-40deg);
   }
 }

@@ -6,9 +6,14 @@
 @use "card";
 @use "prism";
 
+// Blocks
+
+@use "blocks/hero";
+
 // Utilities
 @use "utilities/flow";
 @use "utilities/sr-only";
+@use "utilities/wrapper";
 @use "utilities";
 @use "tokens";
 @use "layout";
