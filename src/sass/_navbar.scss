@@ -1,13 +1,6 @@
 @use "global" as *;
 
-.sr-only {
-  position: absolute;
-  left: -10000px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-}
+
 
 nav {
   display: flex;
@@ -19,10 +12,10 @@ justify-content: space-between;
 }
 
 .logo {
-  color: $primary;
+color: $primary;
 font-weight: bolder;
-  text-decoration: underline;
-
+text-decoration: underline;
+margin: 0;
 }
 
 .dropdown-link-container > a {
@@ -48,7 +41,7 @@ font-weight: bolder;
   color: #023064;
 }
 .logo:hover, .logo:focus {
-  color: #482ff7;
+  color: $secondary;
 }
 
 
