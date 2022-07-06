@@ -8,3 +8,9 @@ background-size: cover;
 .shade {
     background-color: rgba(4, 7, 16, 0.26);
 }
+
+.hero {
+    @media screen and (min-width:48em) {
+        text-align: center;
+    }
+}

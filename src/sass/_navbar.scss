@@ -38,10 +38,11 @@ margin: 0;
 
 .nav-link:hover, .nav-link:focus  {
   text-decoration: underline;
-  color: $accent;
+ text-decoration-color: $accent;
 }
 .logo:hover, .logo:focus {
-  color: $accent;
+  text-decoration: underline;
+ text-decoration-color: $accent;
 }
 
 

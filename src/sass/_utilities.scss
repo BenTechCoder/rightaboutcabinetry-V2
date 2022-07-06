@@ -1,7 +1,5 @@
 @use "global" as *;
 
-// special thanks to andy bell for the flow utility
-
 
 
 .tdbc-content-maxlength {
@@ -24,7 +22,7 @@
 $tdbc-alignments: left, center, right !default;
 
 @each $alignment in $tdbc-alignments {
-  .tdbc-text-align--#{$alignment} {
+  .text-align--#{$alignment} {
     text-align: #{$alignment};
 
     @if ($alignment == "center") {
@@ -36,12 +34,12 @@ $tdbc-alignments: left, center, right !default;
 }
 
 
-.tdbc-mx-auto {
+.mx-auto {
   margin-right: auto;
   margin-left: auto;
 }
 
 
-.tdbc-mb-none {
+.mb-none {
   margin-bottom: 0;
 }
