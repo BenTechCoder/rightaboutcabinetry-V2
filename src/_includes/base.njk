@@ -44,12 +44,26 @@
       title="RSS Feed for {{ meta.siteName }}"
       href="/feed/"
     />
+    <link
+      rel="preload"
+      href="/fonts/fjallaone-regular-webfont.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/merriweather-regular-webfont.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
   </head>
 <div class="[ background-img-hero ]">
   
     <div class="shade">
       <nav id="main-nav">
-  <a href="/" class="logo"><p class="logo">Right About</p></a>
+  <a href="/" class="logo font-base"><h5 class="logo">Right About</h5></a>
     <button class="mobile-dropdown-toggle" aria-hidden="true">
              <div class="bar-1"></div>
              <div class="bar-2"></div>
@@ -68,14 +82,10 @@
   
       </nav>
   
-      <header class="hero tdbc-section--padded [ flow wrapper ] [ color-light ]">
+      <header class="[ hero ][ flow wrapper tdbc-section--padded ] [ color-light ]">
          {# {% image "src/img/2370612355_6f54b216ae_o.webp", "woodshop" %} #}
-      <div id="hero-id" class="hero-inner">
-        <div class="hero-div">
           <h1>{{ heroContent }}</h1>
-          <p>{{ heroP }}</p>
-      </div>
-        
+          <p>{{ heroP }}</p>        
     </header>
     </div>
       

@@ -87,6 +87,7 @@
 
 h1,h2,h3,h4,h5 {
   line-height: 1.2;
+  font-family: 'fjalla_oneregular', sans-serif;
 }
 
 h1 {
@@ -112,6 +113,7 @@ h5 {
 p, blockquote, a, figcaption {
   font-size: var(--step-1);
   margin: 0 0 1rem;
+  font-family: 'merriweatherregular', serif;
 }
 
 article {
