@@ -6,10 +6,12 @@
   "scripts": {
     "watch:sass": "sass  --no-source-map --watch src/sass:public/css",
     "watch:eleventy": "eleventy --serve",
+    "watch:js": "parcel watch ./src/js/script.js --dist-dir ./public/js",
     "build:sass-site": "sass  --no-source-map src/sass/style.scss public/css/style.css",
     "build:sass-social": "sass  --no-source-map src/sass/social.scss social/style.css",
     "build:sass": "npm-run-all --parallel build:sass-site",
     "build:eleventy": "eleventy",
+    "build:js": "parcel build ./src/js/script.js --dist-dir ./public/js",
     "postbuild": "postcss public/css/*.css -u autoprefixer cssnano -r --no-map",
     "start": "cross-env ELEVENTY_ENV=dev npm-run-all build:sass --parallel watch:*",
     "build": "cross-env ELEVENTY_ENV=prod npm-run-all build:sass build:eleventy social-images",
@@ -39,6 +41,7 @@
     "cssnano": "^5.0.8",
     "dotenv": "^10.0.0",
     "emoji-regex": "^10.0.0",
+    "goron": "^0.1.1",
     "luxon": "^2.0.2",
     "markdown-it": "^12.2.0",
     "markdown-it-anchor": "^8.3.1",
@@ -51,7 +54,7 @@
     "stylelint-order": "^4.1.0",
     "stylelint-scss": "^3.21.0",
     "stylelint-selector-bem-pattern": "^2.1.1",
-    "goron": "^0.1.1"
+    "parcel": "^2.6.2"
   },
   "browserslist": [
     "> 0.5%",
