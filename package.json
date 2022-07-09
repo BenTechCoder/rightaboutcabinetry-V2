@@ -2,7 +2,7 @@
   "name": "11ty-netlify-jumpstart",
   "version": "1.0.2",
   "description": "Quickly launch an 11ty-generated static site. Includes a minimal Sass framework, and generated sitemap, RSS feed, and social share preview images.",
-  "main": "./public/",
+  "main": "./public/script.js",
   "scripts": {
     "watch:sass": "sass  --no-source-map --watch src/sass:public/css",
     "watch:eleventy": "eleventy --serve",
@@ -14,7 +14,7 @@
     "build:js": "parcel build ./src/js/script.js --dist-dir ./public/js",
     "postbuild": "postcss public/css/*.css -u autoprefixer cssnano -r --no-map",
     "start": "cross-env ELEVENTY_ENV=dev npm-run-all build:sass --parallel watch:*",
-    "build": "cross-env ELEVENTY_ENV=prod npm-run-all build:sass build:eleventy social-images",
+    "build": "cross-env ELEVENTY_ENV=prod npm-run-all build:sass build:eleventy build:js social-images",
     "lint": "stylelint 'src/sass/**/*.scss' 'src/sass/**/**/*.scss' 'src/sass/**/**/**/*.scss'",
     "lint:fix": "stylelint --fix 'src/sass/**/*.scss' 'src/sass/**/**/*.scss' 'src/sass/**/**/**/*.scss'",
     "social-images": "eleventy-social-images --outputDir public --dataFile social/pages.json --templatePath social/template.html --stylesPath social/sotemplate.css",
@@ -57,7 +57,6 @@
     "parcel": "^2.6.2"
   },
   "browserslist": [
-    "> 0.5%",
-    "not IE 11"
+    "last 2 versions, > 0.5%, ie >= 11"
   ]
 }
