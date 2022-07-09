@@ -2,7 +2,7 @@
   "name": "11ty-netlify-jumpstart",
   "version": "1.0.2",
   "description": "Quickly launch an 11ty-generated static site. Includes a minimal Sass framework, and generated sitemap, RSS feed, and social share preview images.",
-  "main": "index.js",
+  "main": "./public/",
   "scripts": {
     "watch:sass": "sass  --no-source-map --watch src/sass:public/css",
     "watch:eleventy": "eleventy --serve",
