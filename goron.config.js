@@ -4,11 +4,12 @@ const colors = {
     light: '#F9F9F9',
     dark: '#040710',
     accent: '#6E9BC5',
+    shade: 'rgba(4, 7, 16, 0.26)'
   };
   
   const fonts = {
-    base: 'Fjalla One, sans-serif',
-    serif: 'Merriweather, serif'
+    base: 'fjalla_oneregular, sans-serif',
+    serif: 'merriweatherregular, serif'
   };
   
   

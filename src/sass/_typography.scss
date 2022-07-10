@@ -112,8 +112,11 @@ h5 {
 }
 
 p, blockquote, a, figcaption {
-  font-size: var(--step-1);
   margin: 0 0 1rem;
+}
+
+body {
+  font-size: var(--step-1);
   font-family: 'merriweatherregular', serif;
 }
 
