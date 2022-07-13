@@ -4,6 +4,9 @@
   "description": "Quickly launch an 11ty-generated static site. Includes a minimal Sass framework, and generated sitemap, RSS feed, and social share preview images.",
   "main": "./public/script.js",
   "scripts": {
+    "token:goron": "goron -out src/sass/tokens.css node rename.js",
+    "token:rename": "node rename.js",
+    "tokens": "npm-run-all --sequential token:*",
     "watch:sass": "sass  --no-source-map --watch src/sass:public/css",
     "watch:eleventy": "eleventy --serve",
     "watch:js": "parcel watch ./src/js/script.js --dist-dir ./public/js",
