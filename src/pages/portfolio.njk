@@ -7,7 +7,8 @@ heroP: "Our very best work"
 
 <section class="portfolio-img-container">
   {% asyncEach item in collections.portfolio %}
-      {% image item.data.image, item.data.title %}
+  {% image item.data.image,
+  item.data.title %}
   {% endeach %}
 
   <!-- The Modal -->
@@ -16,15 +17,12 @@ heroP: "Our very best work"
     <span class="close">&times;</span>
 
     <!-- Modal Content (The Image) -->
-    <img class="modal-content modal-img" />
+    <img class="modal-content modal-img"/>
 
     <!-- Modal Caption (Image Text) -->
     <div class="caption"></div>
     <button class="close-btn tdbc-button tdbc-button--light tdbc-button tdbc-button--light">Close</button>
   </div>
 </section>
-
-
-
 
 {% include "_partials/contact-snippet.njk" %}
