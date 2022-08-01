@@ -57,22 +57,13 @@ ul.tdbc-column-container {
 
   &--padded {
     padding-top: 3em;
-      padding-bottom: 3em;
+    padding-bottom: 3em;
   }
 
   // stylelint-disable-next-line selector-max-universal
   *:last-child {
     margin-bottom: 0;
   }
-}
-
-.tdbc-hero {
-  display: grid;
-  min-height: 40vh;
-  place-content: center;
-  padding-top: 10vh;
-  padding-bottom: 10vh;
-  text-align: center;
 }
 
 .tdbc-row {
@@ -97,5 +88,5 @@ ul.tdbc-column-container {
 hr {
   margin-top: 4rem;
   margin-bottom: 4rem;
-  border: 1px solid tdbc-color("secondary");
+  border: 1px solid $accent;
 }

@@ -28,6 +28,11 @@ const colors = {
         output: 'standard',
         property: 'color'
       },
+      // 'text-decoration-color': {
+      //   items: colors,
+      //   output: 'standard',
+      //   property: 'text-decoration-color'
+      // },
       'font': {
         items: fonts,
         output: 'standard',

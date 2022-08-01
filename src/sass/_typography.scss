@@ -114,7 +114,13 @@ figcaption {
 }
 
 a {
+  text-decoration: underline;
+  text-decoration-color: $accent;
   color: currentColor;
+}
+
+a:hover {
+  text-decoration-color: currentColor;
 }
 
 body {
@@ -126,6 +132,7 @@ body {
   width: 1.5em;
   height: 1.5em;
   margin-right: 0.25em;
+  margin-inline-end: 0.25em;
 }
 
 article {
