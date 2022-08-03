@@ -1,21 +1,8 @@
 @use "global" as *;
 
 // stylelint-disable-next-line selector-max-type
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background-color: tdbc-color("background");
-  color: $tdbc-color-body;
-  font-family: $base-font-family;
-}
 
 // stylelint-disable selector-max-type, selector-no-qualifying-type
-main,
-main.tdbc-container {
-  padding-top: 5vh;
-  padding-bottom: 5vh;
-}
 
 footer {
   margin-top: auto;

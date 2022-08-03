@@ -1,0 +1,20 @@
+.footer-level-1 {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-l, 1.5em);
+  @media screen and (min-width: 70em) {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  // find progressive enhance solution later
+  gap: var(--space-l);
+
+  ul {
+    padding: 0;
+  }
+}
+
+.credits {
+  font-size: var(--step--1);
+}

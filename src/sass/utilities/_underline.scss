@@ -1,0 +1,24 @@
+@use "../global" as *;
+
+.underline {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+}
+
+.underline::after {
+  content: "";
+  position: absolute;
+  background-color: $accent;
+  height: 4px;
+  width: 90%;
+  bottom: 0;
+  left: 0;
+
+
+}
+
+  .underline[data-underline="center"]::after {
+    left: 50%;
+    transform:translate(-50%,-50%);
+}

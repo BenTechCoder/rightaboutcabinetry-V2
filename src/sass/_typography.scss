@@ -81,6 +81,7 @@ h2,
 h3,
 h4,
 h5 {
+  max-width: 25ch;
   line-height: 1.2;
   font-family: "fjalla_oneregular", sans-serif;
   font-weight: normal;
@@ -110,6 +111,7 @@ p,
 blockquote,
 a,
 figcaption {
+  max-width: 60ch;
   margin: 0 0 1rem;
 }
 

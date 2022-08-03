@@ -11,8 +11,11 @@
 
 @use "blocks/hero";
 @use "blocks/cta";
+@use "blocks/footer";
 // Utilities
 @use "utilities/flow";
+@use "utilities/region";
+@use "utilities/underline";
 @use "utilities/background-img";
 @use "utilities/sr-only";
 @use "utilities/wrapper";
@@ -20,3 +23,45 @@
 @use "utilities";
 @use "tokens";
 @use "layout";
+
+
+.stack {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  
+  .stack > * {
+    margin-block: 0;
+  } 
+  
+  .stack > * + * {
+    margin-block-start: var(--space, 1.5rem);
+  }
+
+  .splitter {
+    > :last-child {
+      margin-top: var(--space-m);
+    }
+
+    @media screen and (min-width:48em) {
+      display: flex;
+  
+      > * {
+        flex-grow: 1;
+      }
+  
+      > :last-child {
+        margin-top: 0;
+        margin-left: var(--space-m);
+      }
+    }
+  }
+
+
+    @media screen and (min-width:48em) {
+        .contact-snippet-text { 
+            margin: auto 0;
+        }
+    }
+  
