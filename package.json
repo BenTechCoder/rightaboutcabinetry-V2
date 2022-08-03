@@ -2,19 +2,18 @@
   "name": "11ty-netlify-jumpstart",
   "version": "1.0.2",
   "description": "Quickly launch an 11ty-generated static site. Includes a minimal Sass framework, and generated sitemap, RSS feed, and social share preview images.",
-  "main": "./public/script.js",
   "scripts": {
     "token:goron": "goron -out src/sass/tokens.css node rename.js",
     "token:rename": "node rename.js",
     "tokens": "npm-run-all --sequential token:*",
     "watch:sass": "sass  --no-source-map --watch src/sass:public/css",
     "watch:eleventy": "eleventy --serve",
-    "watch:js": "parcel watch ./src/js/script.js --dist-dir ./public/js",
+    "watch:js": "parcel watch",
     "build:sass-site": "sass  --no-source-map src/sass/style.scss public/css/style.css",
     "build:sass-social": "sass  --no-source-map src/sass/social.scss social/style.css",
     "build:sass": "npm-run-all --parallel build:sass-site",
     "build:eleventy": "eleventy",
-    "build:js": "parcel build ./src/js/script.js --dist-dir ./public/js",
+    "build:js": "parcel build src/js/script.js --dist-dir src/js",
     "postbuild": "postcss public/css/*.css -u autoprefixer cssnano -r --no-map",
     "start": "cross-env ELEVENTY_ENV=dev npm-run-all build:sass --parallel watch:*",
     "build": "cross-env ELEVENTY_ENV=prod npm-run-all build:sass build:eleventy build:js social-images",
@@ -23,6 +22,7 @@
     "social-images": "eleventy-social-images --outputDir public --dataFile social/pages.json --templatePath social/template.html --stylesPath social/sotemplate.css",
     "bump": "npm --no-git-tag-version version"
   },
+  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/5t3ph/11ty-netlify-jumpstart.git"
@@ -59,7 +59,16 @@
     "stylelint-selector-bem-pattern": "^2.1.1",
     "parcel": "^2.6.2"
   },
+  
   "browserslist": [
     "last 2 versions, > 0.5%, ie >= 11"
-  ]
+  ],
+  "targets": {
+    "js": {
+      "source": [
+        "./src/js/script.js"
+      ],
+      "distDir": "./public/js"
+  }
+}
 }
