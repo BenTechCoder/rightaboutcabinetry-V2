@@ -1,12 +1,5 @@
 @use "global" as *;
 
-.full-bleed {
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-}
-
-
-
 .tdbc-content-maxlength {
   max-width: 80ch;
 }
@@ -38,12 +31,10 @@ $tdbc-alignments: left, center, right !default;
   }
 }
 
-
 .mx-auto {
   margin-right: auto;
   margin-left: auto;
 }
-
 
 .mb-none {
   margin-bottom: 0;

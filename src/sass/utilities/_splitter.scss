@@ -1,0 +1,18 @@
+.splitter {
+  > :last-child {
+    margin-top: var(--space-m);
+  }
+
+  @media screen and (min-width: 48em) {
+    display: flex;
+
+    > * {
+      flex-grow: 1;
+    }
+
+    > :last-child {
+      margin-top: 0;
+      margin-left: var(--space-m);
+    }
+  }
+}

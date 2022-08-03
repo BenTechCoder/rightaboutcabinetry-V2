@@ -46,3 +46,10 @@ $tdbc-spacing: (
   xl: 10rem,
   auto: "auto",
 ) !default;
+
+
+@media screen and (min-width:48em) {
+  .contact-snippet-text { 
+      margin: auto 0;
+  }
+}
