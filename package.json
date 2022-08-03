@@ -13,7 +13,7 @@
     "build:sass-social": "sass  --no-source-map src/sass/social.scss social/style.css",
     "build:sass": "npm-run-all --parallel build:sass-site",
     "build:eleventy": "eleventy",
-    "build:js": "parcel build src/js/script.js --dist-dir src/js",
+    "build:js": "parcel build",
     "postbuild": "postcss public/css/*.css -u autoprefixer cssnano -r --no-map",
     "start": "cross-env ELEVENTY_ENV=dev npm-run-all build:sass --parallel watch:*",
     "build": "cross-env ELEVENTY_ENV=prod npm-run-all build:sass build:eleventy build:js social-images",
