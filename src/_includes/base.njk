@@ -105,62 +105,7 @@
       {{ content | safe }}
     </main>
 
-    <footer class=" [ footer ] [ region ] [ bg-primary color-light ] ">
-      <div class=" footer-level-1 mx-auto ">
-        <div>
-          <h5>Right about Cabinetry and Woodworks LLC</h5>
-        </div>
-        <ul role="list">
-          <li>
-            <a href="tel:9194003907">(919)-400-3907</a>
-          </li>
-          <li>
-            <a href="tel:9198304224">(919)-830-4224</a>
-          </li>
-          <li id="email">
-            <a href="mailto:rightaboutcabinetry@gmail.com">
-               rightaboutcabinetry@gmail.com
-               </a>
-          </li>
-        </ul>
-        <ul role="list">
-          <li>
-            <a href="/">Home</a>
-          </li>
-          <li>
-            <a href="/services/">Services</a>
-          </li>
-          <li>
-            <a href="/portfolio/">Portfolio</a>
-          </li>
-          <li>
-            <a href="/contact/">Contact</a>
-          </li>
-        </ul>
-
-        {# DEAL WITH THIS LATER #}
-        {# <div class="credit">
-          Icons made by
-          <a href="https://www.freepik.com" title="Freepik">Freepik</a> from
-          <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
-        </div>
-        <div class="credit">
-          Icons made by
-          <a href="https://www.flaticon.com/authors/photo3idea-studio" title="photo3idea_studio"
-            >photo3idea_studio</a
-          >
-          from
-          <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
-        </div> #}
-      </div>
-      <div class="footer-level-2 credits wrapper ">
-        <hr>
-        <p>©{% year %} Right about cabinetry & woodworks LLC</p>
-        <p>
-              Built by <a href="https://www.benjaminlebron.com/">Benjamin Lebron</a>
-        </p>
-      </div>
-    </footer>
+    {% include "_partials/footer.njk" %}
 
     <script defer src="/js/script.js"></script>
   </body>

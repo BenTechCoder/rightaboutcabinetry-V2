@@ -1,9 +1,9 @@
 @use "../global" as *;
 
+//only use underline with "wrapper" utility class
 .underline {
     display: inline-block;
     position: relative;
-    text-align: center;
 }
 
 .underline::after {

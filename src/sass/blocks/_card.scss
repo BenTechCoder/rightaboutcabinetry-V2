@@ -1,4 +1,4 @@
-@use "global" as *;
+@use "../global" as *;
 
 .tdbc-card {
   display: flex;
@@ -10,6 +10,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  transition: 200ms background-color ease-in;
   &__title {
     margin-bottom: 1rem;
     // font-size: $tdbc-h3-font-size;
@@ -24,7 +25,6 @@
       left: 0;
       width: 100%;
       height: 100%;
-      transition: 180ms box-shadow ease-in;
       border-radius: 8px;
       content: "";
     }

@@ -22,7 +22,6 @@
     "social-images": "eleventy-social-images --outputDir public --dataFile social/pages.json --templatePath social/template.html --stylesPath social/sotemplate.css",
     "bump": "npm --no-git-tag-version version"
   },
-  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/5t3ph/11ty-netlify-jumpstart.git"
@@ -49,6 +48,7 @@
     "markdown-it": "^12.2.0",
     "markdown-it-anchor": "^8.3.1",
     "npm-run-all": "^4.1.5",
+    "parcel": "^2.6.2",
     "postcss-cli": "^9.0.1",
     "sass": "^1.42.1",
     "stylelint": "^13.13.1",
@@ -56,12 +56,13 @@
     "stylelint-config-standard": "^22.0.0",
     "stylelint-order": "^4.1.0",
     "stylelint-scss": "^3.21.0",
-    "stylelint-selector-bem-pattern": "^2.1.1",
-    "parcel": "^2.6.2"
+    "stylelint-selector-bem-pattern": "^2.1.1"
   },
-  
   "browserslist": [
-    "last 2 versions, > 0.5%, ie >= 11"
+    "ie 8",
+    "Chrome 26",
+    "Firefox 16",
+    "Safari 7"
   ],
   "targets": {
     "js": {
@@ -69,6 +70,6 @@
         "./src/js/script.js"
       ],
       "distDir": "./public/js"
+    }
   }
-}
 }

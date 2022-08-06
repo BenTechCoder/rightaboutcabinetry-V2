@@ -5,37 +5,20 @@ heroContent: "Design and Installation"
 heroP: "Have something in mind? We're here to help"
 ---
 
-<header class="tdbc-container tdbc-text-align--center">
-<h2>Design and Installation makes your project a reality</h2>
-  <p>Click on the images to expand</p>
-</header>
+<div class="wrapper region flow measure-long">
+    <h2 class="underline">Design and Installation makes your project a reality</h2>
+    <p>Click on the images to expand</p>
+</div>
 
 <!--MODAL IMAGE LIBRARY HERE  -->
-<section class="services-img-container">
-   {% asyncEach item in collections.portfolio %}
+<section class=" gallery full-bleed " data-gallery="mini">
+    {% asyncEach item in collections.portfolio %}
     {% if "design-install" in item.data.tag %}
-      {% image item.data.image, item.data.title %}
+        {% image item.data.image,
+        item.data.title %}
     {% endif %}
-  {% endeach %}
-  {# {% image "src/img/WhatsApp Image 2021-10-09 at 7.54.30 PM.webp", "White Fireplace" %}
+    {% endeach %}
+    {# {% image "src/img/WhatsApp Image 2021-10-09 at 7.54.30 PM.webp", "White Fireplace" %}
    {% image "src/img/WhatsApp-Image 2021-10-16-at-3.53.21-PM.webp", "White complete Desk" %} #}
 
-  <!-- The Modal -->
-  <div class="modal">
-    <!-- The Close Button -->
-    <span class="close">&times;</span>
-
-    <!-- Modal Content (The Image) -->
-    <img class="modal-content modal-img" />
-
-    <!-- Modal Caption (Image Text) -->
-    <div class="caption"></div>
-    <button class="close-btn tdbc-button tdbc-button--light tdbc-button tdbc-button--light">
-      Close
-    </button>
-  </div>
 </section>
-
-
-
-

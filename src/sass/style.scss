@@ -1,17 +1,20 @@
 @use "reset";
-// @use "sitenav";
-@use "navbar";
 @use "typography";
 @use "spacing";
 @use "buttons";
-@use "card";
-// @use "prism";
 @use "fonts";
+@use "tokens";
+@use "layout";
+// @use "prism";
 // Blocks
 
 @use "blocks/hero";
 @use "blocks/cta";
 @use "blocks/footer";
+@use "blocks/navbar";
+@use "blocks/card";
+@use "blocks/modal";
+@use "blocks/gallery";
 // Utilities
 @use "utilities/flow";
 @use "utilities/full-bleed";
@@ -24,8 +27,7 @@
 @use "utilities/splitter";
 @use "utilities/stack";
 @use "utilities";
-@use "tokens";
-@use "layout";
+
 
 
 //Fix social images

@@ -1,6 +1,4 @@
-@use "global" as *;
-
-
+@use "../global" as *;
 
 nav {
   color: $light;
@@ -8,13 +6,13 @@ nav {
   align-items: center;
   padding: 2em;
   margin: 0 1em;
-justify-content: space-between;
+  justify-content: space-between;
 }
 
 .logo {
   color: $light;
-text-decoration: underline;
-margin: 0;
+  text-decoration: underline;
+  margin: 0;
 }
 
 .dropdown-link-container > a {
@@ -33,23 +31,24 @@ margin: 0;
 
 .nav-link {
   color: $light;
-  text-decoration: none;
+  text-decoration-color: $light;
 }
 
-.nav-link:hover, .nav-link:focus  {
+.nav-link:hover,
+.nav-link:focus {
   text-decoration: underline;
- text-decoration-color: $accent;
+  text-decoration-color: $accent;
 }
-.logo:hover, .logo:focus {
+.logo:hover,
+.logo:focus {
   text-decoration: underline;
- text-decoration-color: $accent;
+  text-decoration-color: $accent;
 }
-
 
 @media (max-width: 768px) {
-nav {
-  margin: 0;
-}
+  nav {
+    margin: 0;
+  }
   .dropdown-link-container {
     padding-left: 7vw;
     padding-right: 7vw;
@@ -65,7 +64,7 @@ nav {
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
-    
+
     z-index: 0;
     opacity: 0; /* fade out */
     transform: translateY(-100%); /* move out of view */
@@ -73,18 +72,19 @@ nav {
     background: $light;
   }
 
-.nav-link {
-  color: $dark;
-}
+  .nav-link {
+    font-size: var(--step-2);
+    margin-top: var(--space-l, 1.5em);
+    color: $dark;
+    text-decoration-color: $dark;
+  }
 
-  nav.dropdown-opened > .dropdown-link-container{
+  nav.dropdown-opened > .dropdown-link-container {
     color: $dark;
     z-index: 1;
     opacity: 1; /* fade in */
     transform: translateY(0); /* move into view */
   }
-  
- 
 
   .logo,
   .mobile-dropdown-toggle {
