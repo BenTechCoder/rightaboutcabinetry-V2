@@ -11,9 +11,7 @@
   padding: 0.25em 1em;
   transition: 180ms ease-in-out;
   transition-property: background, border;
-  border-radius: math.div($tdbc-border-radius, 2);
   background-color: tdbc-color("primary");
-  color: #fff;
   font-size: 1.125rem;
   line-height: 1.1;
   text-align: center;
@@ -37,7 +35,7 @@
 
   &--large {
     min-height: 34px;
-    padding: 0.30em 1.6em;
+    padding: 0.3em 1.6em;
   }
 
   &--center {
@@ -126,3 +124,13 @@
     }
   }
 }
+
+.form-button:hover {
+  transition: 200ms background-color ease-in;
+  background-color: $primary;
+  color: $light;
+  opacity: 1;
+  border-radius: 5px;
+}
+
+
