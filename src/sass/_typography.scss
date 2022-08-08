@@ -1,49 +1,141 @@
-@use "theme" as *;
+@use "global" as *;
+@use "tokens" as *;
 
-$tdbc-typography-variants: h1, h2, h3, h4;
+/* @link https://utopia.fyi/type/calculator?c=320,16,1.2,1140,20,1.333,6,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
 
-@each $type in $tdbc-typography-variants {
-  #{$type},
-  .tdbc-#{$type} {
-    font-weight: $tdbc-strong-font-weight;
-    line-height: 1.15;
+:root {
+  --fluid-min-width: 320;
+  --fluid-max-width: 1140;
+
+  --fluid-screen: 100vw;
+  --fluid-bp: calc(
+    (var(--fluid-screen) - var(--fluid-min-width) / 16 * 1rem) /
+      (var(--fluid-max-width) - var(--fluid-min-width))
+  );
+}
+
+@media screen and (min-width: 1140px) {
+  :root {
+    --fluid-screen: calc(var(--fluid-max-width) * 1px);
   }
 }
 
-// As of v0.3.0, `clamp` not well enough supported on mobile browsers for use
-// Due to build-in min/max Sass functions, requires `unquote()` to correctly
-// render as CSS min/max
+:root {
+  --f--2-min: 11.11;
+  --f--2-max: 11.26;
+  --step--2: calc(
+    ((var(--f--2-min) / 16) * 1rem) + (var(--f--2-max) - var(--f--2-min)) * var(--fluid-bp)
+  );
+
+  --f--1-min: 13.33;
+  --f--1-max: 15;
+  --step--1: calc(
+    ((var(--f--1-min) / 16) * 1rem) + (var(--f--1-max) - var(--f--1-min)) * var(--fluid-bp)
+  );
+
+  --f-0-min: 16;
+  --f-0-max: 20;
+  --step-0: calc(
+    ((var(--f-0-min) / 16) * 1rem) + (var(--f-0-max) - var(--f-0-min)) * var(--fluid-bp)
+  );
+
+  --f-1-min: 19.2;
+  --f-1-max: 26.66;
+  --step-1: calc(
+    ((var(--f-1-min) / 16) * 1rem) + (var(--f-1-max) - var(--f-1-min)) * var(--fluid-bp)
+  );
+
+  --f-2-min: 23.04;
+  --f-2-max: 35.54;
+  --step-2: calc(
+    ((var(--f-2-min) / 16) * 1rem) + (var(--f-2-max) - var(--f-2-min)) * var(--fluid-bp)
+  );
+
+  --f-3-min: 27.65;
+  --f-3-max: 47.37;
+  --step-3: calc(
+    ((var(--f-3-min) / 16) * 1rem) + (var(--f-3-max) - var(--f-3-min)) * var(--fluid-bp)
+  );
+
+  --f-4-min: 33.18;
+  --f-4-max: 63.15;
+  --step-4: calc(
+    ((var(--f-4-min) / 16) * 1rem) + (var(--f-4-max) - var(--f-4-min)) * var(--fluid-bp)
+  );
+
+  --f-5-min: 39.81;
+  --f-5-max: 84.17;
+  --step-5: calc(
+    ((var(--f-5-min) / 16) * 1rem) + (var(--f-5-max) - var(--f-5-min)) * var(--fluid-bp)
+  );
+
+  --f-6-min: 47.78;
+  --f-6-max: 112.2;
+  --step-6: calc(
+    ((var(--f-6-min) / 16) * 1rem) + (var(--f-6-max) - var(--f-6-min)) * var(--fluid-bp)
+  );
+}
+
 h1,
-.tdbc-h1 {
-  font-size: $tdbc-h1-font-size;
-  font-size: unquote("min(max(3rem, 5vw), #{$tdbc-h1-font-size})");
-}
-
 h2,
-.tdbc-h2 {
-  font-size: $tdbc-h2-font-size;
-  font-size: unquote("min(max(2.5rem, 5vw), #{$tdbc-h2-font-size})");
-}
-
 h3,
-.tdbc-h3 {
-  font-size: $tdbc-h3-font-size;
+h4,
+h5 {
+  max-width: 25ch;
+  line-height: 1.2;
+  font-family: "fjalla_oneregular", sans-serif;
+  font-weight: normal;
 }
 
-h4,
-.tdbc-h4 {
-  font-size: $tdbc-h4-font-size;
-  color: tdbc-color("gray");
+h1 {
+  font-size: var(--step-6);
+}
+
+h2 {
+  font-size: var(--step-5);
+}
+
+h3 {
+  font-size: var(--step-4);
+}
+
+h4 {
+  font-size: var(--step-3);
+}
+
+h5 {
+  font-size: var(--step-2);
 }
 
 p,
-li,
-a {
-  font-size: $tdbc-text-font-size;
+blockquote,
+a,
+figcaption {
+  max-width: 60ch;
+  margin: 0 0 1rem;
 }
 
-p {
-  margin: 0 0 1rem;
+a {
+  text-decoration: underline;
+  text-decoration-color: $accent;
+  color: currentColor;
+}
+
+a:hover {
+  text-decoration-color: currentColor;
+}
+
+body {
+  font-size: var(--step-1);
+  color: $secondary;
+  font-family: "merriweatherregular", serif;
+}
+
+.icon {
+  width: 1.5em;
+  height: 1.5em;
+  margin-right: 0.25em;
+  margin-inline-end: 0.25em;
 }
 
 article {
@@ -66,12 +158,12 @@ article {
 }
 
 strong {
-  font-weight: $tdbc-strong-font-weight;
+  font-weight: 700;
 }
 
-a:not(.tdbc-button) {
-  color: $tdbc-link-color;
-}
+// a:not(.tdbc-button) {
+//   color: $accent;
+// }
 
 code:not([class*="language"]) {
   display: inline-flex;
@@ -79,7 +171,7 @@ code:not([class*="language"]) {
   background-color: tdbc-color("light");
   color: tdbc-color("gray");
   font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
-  border: 1px solid scale-color(tdbc-color("gray"), $lightness: 50%);
+  border: 1px solid scale-color(tdbc-color("light"), $lightness: 50%);
   border-radius: 2px;
   font-size: 0.75em;
   line-height: 1.1;
@@ -95,13 +187,8 @@ blockquote {
   margin-left: 0;
   margin-right: 0;
   padding-left: 1.5rem;
-  border-left: 2px solid tdbc-color("secondary");
-  color: tdbc-color("gray");
-
-  &,
-  p {
-    font-size: $tdbc-h4-font-size;
-  }
+  border-left: 3px solid $accent;
+  color: $dark;
 
   + * {
     margin-top: 3rem;
@@ -112,14 +199,7 @@ blockquote {
   }
 }
 
-.tdbc-lead {
-  font-size: $tdbc-lead-font-size;
-  letter-spacing: 0.01em;
-  margin-bottom: 1em;
-  line-height: 1.3;
-}
-
-.tdbc-list-unstyled {
+.list-unstyled {
   list-style: none;
   padding: 0;
 }

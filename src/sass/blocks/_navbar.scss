@@ -1,28 +1,17 @@
-@use "theme" as *;
-
-.sr-only {
-  position: absolute;
-  left: -10000px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-}
+@use "../global" as *;
 
 nav {
+  color: $light;
   display: flex;
   align-items: center;
-  padding: 2.7vh;
-  font-weight: bold;
-  margin: 0 1rem;
-justify-content: space-between;
+  padding: 2em;
+  margin: 0 1em;
+  justify-content: space-between;
 }
 
 .logo {
-  color: $tdbc-color-primary;
-font-weight: bolder;
   text-decoration: underline;
-
+  margin: 0;
 }
 
 .dropdown-link-container > a {
@@ -40,22 +29,25 @@ font-weight: bolder;
 }
 
 .nav-link {
-  text-decoration: none;
+  color: $light;
+  text-decoration-color: $light;
 }
 
-.nav-link:hover, .nav-link:focus  {
+.nav-link:hover,
+.nav-link:focus {
   text-decoration: underline;
-  color: #023064;
+  text-decoration-color: $accent;
 }
-.logo:hover, .logo:focus {
-  color: #482ff7;
+.logo:hover,
+.logo:focus {
+  text-decoration: underline;
+  text-decoration-color: $accent;
 }
-
 
 @media (max-width: 768px) {
-nav {
-  margin: 0;
-}
+  nav {
+    margin: 0;
+  }
   .dropdown-link-container {
     padding-left: 7vw;
     padding-right: 7vw;
@@ -69,27 +61,29 @@ nav {
     /* then, arrange our links top to bottom */
     display: flex;
     flex-direction: column;
-    /* center links vertically, push to the right horizontally.
-       this means our links will line up with the rightward hamburger button */
-    justify-content:space-around;
+    justify-content: center;
     align-items: flex-end;
+
     z-index: 0;
     opacity: 0; /* fade out */
     transform: translateY(-100%); /* move out of view */
     transition: transform 0.2s, opacity 0.2s; /* transition these smoothly */
-    background: #fff;
+    background: $light;
   }
 
-.nav-link {
-  font-size: 2.2rem;
-}
+  .nav-link {
+    font-size: var(--step-2);
+    margin-top: var(--space-l, 1.5em);
+    color: $dark;
+    text-decoration-color: $dark;
+  }
 
-  nav.dropdown-opened > .dropdown-link-container{
+  nav.dropdown-opened > .dropdown-link-container {
+    color: $dark;
     z-index: 1;
     opacity: 1; /* fade in */
     transform: translateY(0); /* move into view */
   }
-  
 
   .logo,
   .mobile-dropdown-toggle {
@@ -116,7 +110,7 @@ nav {
   position: relative;
   transform-origin: 1px;
   margin: 5px auto;
-  background-color: $tdbc-color-primary;
+  background-color: $light;
   transition: all 0.3s linear;
 }
 
@@ -131,13 +125,15 @@ nav {
 
 .open {
   .bar-1 {
-    transform: rotate(40deg);
+    background-color: $dark;
+    transform: rotate(44deg);
   }
   .bar-2 {
     opacity: 0;
     transform: translateX(20px);
   }
   .bar-3 {
-    transform: rotate(-38deg);
+    background-color: $dark;
+    transform: rotate(-40deg);
   }
 }

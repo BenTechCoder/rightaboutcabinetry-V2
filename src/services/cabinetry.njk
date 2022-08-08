@@ -5,39 +5,18 @@ description: "Right About Cabinetry Offers Custom cabinets. Take a look at our p
 heroP: "Beautiful cabinets at the right price"
 ---
 
-<header class="tdbc-container tdbc-text-align--center">
-  <h2>Our Quality Cabinets</h2>
-  <p>Click on the images to expand</p>
-</header>
+<div class="wrapper region flow">
+    <h2 class="underline">Our Quality Cabinets</h2>
+    <p>Click on the images to expand</p>
+</div>
 
 <!--MODAL IMAGE LIBRARY HERE  -->
-<section class="services-img-container">
- {% asyncEach item in collections.portfolio %}
+<section class=" gallery full-bleed " data-gallery="mini">
+    {% asyncEach item in collections.portfolio %}
     {% if "cabinetry" in item.data.tag %}
-      {% image item.data.image, item.data.title %}
+        {% image item.data.image,
+        item.data.title %}
     {% endif %}
-  {% endeach %}
-{# 
-  {% image "src/img/WhatsApp Image 2021-10-09 at 7.47.59 PM.webp", "Brown Dresser Cabinet" %} 
-  {% image "src/img/WhatsApp Image 2021-10-06 at 1.43.13 PM (1).webp", "Light Brown Display Cabinet" %} {% image "src/img/WhatsApp-Image 2021-10-16-at-3.53.21-PM.webp", "White complete Desk" %} {%
-  image "src/img/messages_0 (3).webp", "Full kitchen Cabinets" %} #}
+    {% endeach %}
 
-  <!-- The Modal -->
-  <div class="modal">
-    <!-- The Close Button -->
-    <span class="close">&times;</span>
-
-    <!-- Modal Content (The Image) -->
-    <img class="modal-content modal-img" />
-
-    <!-- Modal Caption (Image Text) -->
-    <div class="caption"></div>
-    <button class="close-btn tdbc-button tdbc-button--light tdbc-button tdbc-button--light">
-      Close
-    </button>
-  </div>
 </section>
-
-<!-- Contact component -->
-
-{% include "_partials/contact-snippet.njk" %}

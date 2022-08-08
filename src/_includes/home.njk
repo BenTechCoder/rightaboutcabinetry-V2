@@ -1,19 +1,18 @@
 ---
 layout: base.njk
-heroContent: "Right about Cabinetry & Woodworks LLC"
+heroContent: "We’re Right About Cabinetry & Woodwork"
 heroP: "Making quality Woodworks in North Carolina"
-title: "Home"
-description: "rightaboutshop.com: The official website of Right About Cabinetry and Woodworks, making Quality cabinets in North Carolina"
+title: ""
+description: ""
 templateEngineOverride: md, njk
 ---
 
 {% include "_partials/services-list.njk" %}
 
+{% include "_partials/CTA.njk" %}
 
-<section class="portfolio tdbc-section--padded tdbc-row--center-alignitems tdbc-row--center-content">
- <div>
-    <h2 class="header-shadow">See our Work:</h2>
-    <a class="tdbc-button tdbc-button--secondary tdbc-button--large" href="/portfolio">Portfolio</a>
- </div>
-</section>
+{% include "_partials/portfolio-snippet.njk" %}
+
 {% include "_partials/contact-snippet.njk" %}
+
+{% include "_partials/modal.njk" %}

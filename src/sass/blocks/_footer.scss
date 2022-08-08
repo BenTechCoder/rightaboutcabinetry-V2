@@ -1,0 +1,22 @@
+
+.footer {
+  --region-space: var(--space-m);
+}
+
+.footer-level-1 {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-m-l, 1.5em);
+  @media screen and (min-width: 70em) {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  gap: var(--space-m);
+
+
+}
+
+.credits {
+  font-size: var(--step--1);
+}

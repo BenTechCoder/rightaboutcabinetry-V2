@@ -5,37 +5,21 @@ heroContent: "Woodwork"
 heroP: "Custom woodwork for any customer"
 ---
 
-<header class="tdbc-container tdbc-text-align--center">
-  <h2 class="h2-hero">We are expert carpenters</h2>
+<div class="wrapper region flow">
+  <h2 class="underline">We are expert carpenters</h2>
   <p>Click on the images to expand</p>
-</header>
+</div>
 
-<section class="services-img-container">
 
-   {% asyncEach item in collections.portfolio %}
-    {% if "woodwork" in item.data.tag %}
-      {% image item.data.image, item.data.title %}
-    {% endif %}
+ <section class=" gallery full-bleed " data-gallery="mini">
+
+  {% asyncEach item in collections.portfolio %}
+  {% if "woodwork" in item.data.tag %}
+    {% image item.data.image,
+    item.data.title %}
+  {% endif %}
   {% endeach %}
 
-  {# {% image "src/img/WhatsApp Image 2021-10-09 at 7.54.30 PM.webp", "White Fireplace" %} {% image
-  "src/img/messages_0 (4).webp", "White Kitchen island and table" %} {% image
-  "src/img/messages_0 (2).webp", "White Kitchen island" %} #}
-
-  <!-- The Modal -->
-  <div class="modal">
-    <!-- The Close Button -->
-    <span class="close">&times;</span>
-
-    <!-- Modal Content (The Image) -->
-    <img class="modal-content modal-img" />
-
-    <!-- Modal Caption (Image Text) -->
-    <div class="caption"></div>
-    <button class="close-btn tdbc-button tdbc-button--light">Close</button>
-  </div>
 </section>
 
-<!-- Contact component -->
-
-{% include "_partials/contact-snippet.njk" %}
+{% include "_partials/modal.njk" %}

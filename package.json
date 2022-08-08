@@ -2,17 +2,21 @@
   "name": "11ty-netlify-jumpstart",
   "version": "1.0.2",
   "description": "Quickly launch an 11ty-generated static site. Includes a minimal Sass framework, and generated sitemap, RSS feed, and social share preview images.",
-  "main": "index.js",
   "scripts": {
+    "token:goron": "goron -out src/sass/tokens.css node rename.js",
+    "token:rename": "node rename.js",
+    "tokens": "npm-run-all --sequential token:*",
     "watch:sass": "sass  --no-source-map --watch src/sass:public/css",
     "watch:eleventy": "eleventy --serve",
+    "watch:js": "parcel watch",
     "build:sass-site": "sass  --no-source-map src/sass/style.scss public/css/style.css",
     "build:sass-social": "sass  --no-source-map src/sass/social.scss social/style.css",
     "build:sass": "npm-run-all --parallel build:sass-site",
     "build:eleventy": "eleventy",
+    "build:js": "parcel build",
     "postbuild": "postcss public/css/*.css -u autoprefixer cssnano -r --no-map",
     "start": "cross-env ELEVENTY_ENV=dev npm-run-all build:sass --parallel watch:*",
-    "build": "cross-env ELEVENTY_ENV=prod npm-run-all build:sass build:eleventy social-images",
+    "build": "cross-env ELEVENTY_ENV=prod npm-run-all build:sass build:eleventy build:js social-images",
     "lint": "stylelint 'src/sass/**/*.scss' 'src/sass/**/**/*.scss' 'src/sass/**/**/**/*.scss'",
     "lint:fix": "stylelint --fix 'src/sass/**/*.scss' 'src/sass/**/**/*.scss' 'src/sass/**/**/**/*.scss'",
     "social-images": "eleventy-social-images --outputDir public --dataFile social/pages.json --templatePath social/template.html --stylesPath social/sotemplate.css",
@@ -39,10 +43,12 @@
     "cssnano": "^5.0.8",
     "dotenv": "^10.0.0",
     "emoji-regex": "^10.0.0",
+    "goron": "^0.1.1",
     "luxon": "^2.0.2",
     "markdown-it": "^12.2.0",
     "markdown-it-anchor": "^8.3.1",
     "npm-run-all": "^4.1.5",
+    "parcel": "^2.6.2",
     "postcss-cli": "^9.0.1",
     "sass": "^1.42.1",
     "stylelint": "^13.13.1",
@@ -53,7 +59,17 @@
     "stylelint-selector-bem-pattern": "^2.1.1"
   },
   "browserslist": [
-    "> 0.5%",
-    "not IE 11"
-  ]
+    "ie 8",
+    "Chrome 26",
+    "Firefox 16",
+    "Safari 7"
+  ],
+  "targets": {
+    "js": {
+      "source": [
+        "./src/js/script.js"
+      ],
+      "distDir": "./public/js"
+    }
+  }
 }

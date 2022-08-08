@@ -1,0 +1,11 @@
+
+.hero-img {
+background-image: url("/img/2370612355_6f54b216ae_o(1).jpg");
+}
+
+
+.hero {
+    @media screen and (min-width:48em) {
+        text-align: center;
+    }
+}

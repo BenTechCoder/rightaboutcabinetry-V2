@@ -1,0 +1,56 @@
+
+$primary: #023064 !default;
+$secondary: #00163D !default;
+$light: #F9F9F9 !default;
+$dark: #040710 !default;
+$accent: #6E9BC5 !default;
+
+$tdbc-brand-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+) !default;
+
+$tdbc-color-body: scale-color($primary, $lightness: -30%, $saturation: -50%) !default;
+// $tdbc-color-gray: mix(#767676, $tdbc-color-body, 70%) !default;
+
+$tdbc-colors: map-merge(
+  $tdbc-brand-colors,
+  (
+    "text": $tdbc-color-body,
+    "background": $light,
+    "light": #fff,
+    "dark": rgba(black, 0.87),
+  )
+);
+
+@function tdbc-color($key) {
+  @return map-get($tdbc-colors, $key);
+}
+
+// Add/remove to selectively generate `ink` (text color) classes
+$tdbc-ink-colors: "primary", "secondary", "text", "gray", "light", "dark" !default;
+
+// Add/remove to selectively generate `background` (text color) classes
+// $tdbc-background-colors: "primary", "secondary", "background", "gray", "light" !default;
+
+$tdbc-button-variants: "primary", "secondary", "light", "gray" !default;
+$tdbc-link-color: tdbc-color("primary") !default;
+$tdbc-border-radius: 8px !default;
+
+$base-font-family: 'Merriweather', serif !default;
+
+$tdbc-spacing: (
+  sm: 1rem,
+  md: 3rem,
+  lg: 6rem,
+  xl: 10rem,
+  auto: "auto",
+) !default;
+
+
+@media screen and (min-width:48em) {
+  .contact-snippet-text { 
+      margin: auto 0;
+  }
+}
+

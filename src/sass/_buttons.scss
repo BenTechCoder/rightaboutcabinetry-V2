@@ -1,4 +1,4 @@
-@use "theme" as *;
+@use "global" as *;
 @use "sass:math";
 
 .tdbc-button {
@@ -11,9 +11,7 @@
   padding: 0.25em 1em;
   transition: 180ms ease-in-out;
   transition-property: background, border;
-  border-radius: math.div($tdbc-border-radius, 2);
   background-color: tdbc-color("primary");
-  color: #fff;
   font-size: 1.125rem;
   line-height: 1.1;
   text-align: center;
@@ -37,8 +35,7 @@
 
   &--large {
     min-height: 34px;
-    font-size: 1.80rem;
-    padding: 0.30em 1.6em;
+    padding: 0.3em 1.6em;
   }
 
   &--center {
@@ -75,48 +72,6 @@
       background-color: scale-color(tdbc-color("primary"), $lightness: 80%);
     }
   }
-
-  // stylelint-disable max-nesting-depth
-  @each $key in $tdbc-button-variants {
-    $color: tdbc-color($key);
-
-    @if ($key != "primary") {
-      &--#{$key} {
-        background-color: $color;
-        
-
-        @if ($key == "light") {
-          color: tdbc-color("dark");
-        }
-
-        &:focus {
-          box-shadow: 0 0 0 3px scale-color($color, $lightness: -30%);
-        }
-      }
-
-      &-outlined--#{$key} {
-        border-color: scale-color($color, $lightness: 30%, $saturation: 15%);
-        color: $color;
-
-        &:focus {
-          box-shadow: 0 0 0 3px scale-color($color, $lightness: -30%);
-        }
-
-        @if ($key == "light") {
-          &:hover,
-          &:focus {
-            background-color: rgba($color, 0.15);
-          }
-        } @else {
-          &:hover,
-          &:focus {
-            background-color: scale-color($color, $lightness: 90%);
-          }
-        }
-      }
-    }
-  }
-  // stylelint-enable
 }
 
 .tdbc-button__icon,
@@ -168,4 +123,13 @@
       content: "";
     }
   }
+}
+
+
+.form-button:hover {
+  transition: 200ms background-color ease-in;
+  background-color: $primary;
+  color: $light;
+  opacity: 1;
+  border-radius: 5px;
 }

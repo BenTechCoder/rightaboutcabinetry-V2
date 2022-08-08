@@ -1,39 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-  {%- set pageTitle %}{% if title %}{{
+  {%- set pageTitle %}
+  {% if title %}{{
     title
   }}
   | {% endif %}{{
     meta.siteName
-  }}{% endset -%} {%- set pageDescription %}{% if description %}{{
+  }}{% endset -%}
+  {%- set pageDescription %}
+  {% if description %}{{
     description
-  }}{% else %}{{
+  }}
+  {% else %}{{
     meta.siteDescription
-  }}{% endif %}{% endset -%} {%- set pageSocialImg %}{{
+  }}
+  {% endif %}{% endset -%}
+  {%- set pageSocialImg %}{{
     meta.url
   }}/previews/{% if title %}{{
     title | slug
-  }}{% else %}home{% endif %}.png{% endset -%}
+  }}
+  {% else %}home{% endif %}.png{% endset -%}
   <head>
     <!-- Generated from the 11ty Netlify Jumpstart: https://github.com/5t3ph/11ty-netlify-jumpstart -->
-    <meta charset="UTF-8" />
-    <meta name="robots" content="index, follow" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8"/>
+    <meta name="robots" content="index, follow"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>{{ pageTitle }}</title>
-    <meta name="description" content="{{ pageDescription }}" />
-    <link rel="icon" href="{{ '/favicon.png' | url }}" />
-    <link href="{{ '/css/style.css' | url }}" rel="stylesheet" />
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="description" content="{{ pageDescription }}"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+    <link rel="manifest" href="/img/site.webmanifest">
+    <link href="{{ '/css/style.css' | url }}" rel="stylesheet"/>
+    <meta name="twitter:card" content="summary_large_image"/>
     {% if meta.twitterUsername %}
-    <meta name="twitter:creator" content="@{{ meta.twitterUsername }}" />
+      <meta name="twitter:creator" content="@{{ meta.twitterUsername }}"/>
     {% endif %}
-    <meta name="twitter:title" content="{{ pageTitle }}" />
-    <meta name="twitter:description" content="{{ pageDescription }}" />
+    <meta name="twitter:title" content="{{ pageTitle }}"/>
+    <meta name="twitter:description" content="{{ pageDescription }}"/>
 
-    <meta name="og:title" content="{{ pageTitle }}" />
-    <meta name="og:description" content="{{ pageDescription }}" />
-    <meta property="og:image" content="{{ pageSocialImg }}" />
-    <meta name="twitter:image" content="{{ pageSocialImg }}" />
+    <meta name="og:title" content="{{ pageTitle }}"/>
+    <meta name="og:description" content="{{ pageDescription }}"/>
+    <meta property="og:image" content="{{ pageSocialImg }}"/>
+    <meta name="twitter:image" content="{{ pageSocialImg }}"/>
     <!-- <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png" />
@@ -43,66 +53,63 @@
       type="application/rss+xml"
       title="RSS Feed for {{ meta.siteName }}"
       href="/feed/"
-    />
+/>
+    <link
+      rel="preload"
+      href="/fonts/fjallaone-regular-webfont.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+/>
+    <link
+      rel="preload"
+      href="/fonts/merriweather-regular-webfont.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+/>
   </head>
+  <div class="[ background-img hero-img ]">
 
-    <nav id="main-nav">
-<a href="/" class="logo"><h3 class="logo">Right About</h3></a>
-  <button class="mobile-dropdown-toggle" aria-hidden="true">
-           <div class="bar-1"></div>
-           <div class="bar-2"></div>
-           <div class="bar-3"></div>
-    </button>
-      <div class="dropdown-link-container">
+    <div class="bg-shade">
+      <nav id="main-nav" class="wrapper">
+        <a href="/" class="   font-base logo ">
+          <h5 class="">Right About Cabinetry</h5>
+        </a>
+        <button class="mobile-dropdown-toggle" aria-hidden="true">
+          <div class="bar-1"></div>
+          <div class="bar-2"></div>
+          <div class="bar-3"></div>
+        </button>
+        <div class="dropdown-link-container">
           <a href="/services/" class="nav-link">Services</a>
-   
+
           <a href="/portfolio/" class="nav-link">Portfolio</a>
-        
+
           <a href="/contact/" class="nav-link">Contact</a>
 
-     <div class="nav-close-div">     
-       <button class="tdbc-button tdbc-button--large tdbc-button--secondary nav-close-btn">Close</button></div>
-      </div>
+          <div class="nav-close-div">
+            <button class=" tdbc-button tdbc-button--large tdbc-button--secondary nav-close-btn color-light ">Close</button>
+          </div>
+        </div>
 
-    </nav>
+      </nav>
 
-    <header class="hero tdbc-section--padded">
-    <div id="hero-id" class="hero-container">
-      <div class="hero-div">
+      <header class="[ hero ][ flow wrapper region ] [ color-light ]">
+        {# {% image "src/img/2370612355_6f54b216ae_o.webp", "woodshop" %} #}
         <h1>{{ heroContent }}</h1>
-        <h2 class="tdbc-h3">{{ heroP }}</h2>
+        <p class="mx-auto">{{ heroP }}</p>
+      </header>
     </div>
-  </header>
+
+  </div>
   <body class="body">
     <main>
       {{ content | safe }}
     </main>
- 
 
-    <footer class="footer">
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/services/">Services</a></li>
-        <li><a href="/portfolio/">Portfolio</a></li>
-        <li><a href="/contact/">Contact</a></li>
-      </ul>
-      <p>
-        Built by <a href="https://www.benjaminlebron.com/">Benjamin Lebron</a>
-      </p>
-      <div class="credit">
-        Icons made by
-        <a href="https://www.freepik.com" title="Freepik">Freepik</a> from
-        <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
-      </div>
-      <div class="credit">
-        Icons made by
-        <a href="https://www.flaticon.com/authors/photo3idea-studio" title="photo3idea_studio"
-          >photo3idea_studio</a
-        >
-        from
-        <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
-      </div>
-    </footer>
-     <script defer src="/js/script.js"></script>
+    {% include "_partials/footer.njk" %}
+
+    <script defer src="/js/script.js"></script>
   </body>
 </html>
