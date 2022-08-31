@@ -3,7 +3,7 @@
   "version": "1.0.2",
   "description": "Quickly launch an 11ty-generated static site. Includes a minimal Sass framework, and generated sitemap, RSS feed, and social share preview images.",
   "scripts": {
-    "token:goron": "goron -out src/sass/tokens.css node rename.js",
+    "token:goron": "goron -out src/sass/tokens.css",
     "token:rename": "node rename.js",
     "tokens": "npm-run-all --sequential token:*",
     "watch:sass": "sass  --no-source-map --watch src/sass:public/css",
