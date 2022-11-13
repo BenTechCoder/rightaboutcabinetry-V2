@@ -11,3 +11,8 @@
 .stack > * + * {
   margin-block-start: var(--space, 1.5rem);
 }
+
+[data-stack--position="center"] {
+  align-items: center;
+  justify-content: center;
+}
