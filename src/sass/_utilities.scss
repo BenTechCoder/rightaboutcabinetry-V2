@@ -40,6 +40,13 @@ $tdbc-alignments: left, center, right !default;
   margin: 0;
 }
 
+.mi-none {
+margin-block-end: 0;
+margin-block-start: 0;
+margin-inline-start: 0;
+margin-inline-end: 0;
+}
+
 .mb-none {
   margin-bottom: 0;
 }

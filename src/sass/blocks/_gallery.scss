@@ -31,3 +31,6 @@
     grid-template-columns: repeat(auto-fit, minmax(25ch, 1fr));
 }
 
+.portfolio {
+    --flow-space: 3em;
+}
