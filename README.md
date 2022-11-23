@@ -1,3 +1,11 @@
+# Right about cabinetry
+
+A nice site for my freind's carpentry buisness operating in North carolina
+
+[rightaboutshop.com](https://www.rightaboutshop.com/)
+
+I used the 11ty netlify jumpstart along with parcel added in for bundling the js and SCSS used in this website. Below is the original README of the template, please consider supporting the maker of this template if you can. 
+
 # 11ty Netlify Jumpstart
 
 > Created by Stephanie Eckles ([@5t3ph](https://twitter.com/5t3ph))
