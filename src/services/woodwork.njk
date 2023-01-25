@@ -11,14 +11,19 @@ heroP: "Custom woodwork for any customer"
 </div>
 
 
- <section class=" gallery full-bleed " data-gallery="mini">
-
-  {% asyncEach item in collections.portfolio %}
-  {% if "woodwork" in item.data.tag %}
-    {% image item.data.image,
-    item.data.title %}
-  {% endif %}
-  {% endeach %}
+<section>
+    <ul class=" wrapper gallery ">
+    {% asyncEach item in collections.portfolio %}
+    {% if "woodwork" in item.data.tag %}
+   
+          <li>
+                {% image item.data.image,
+                item.data.title %}
+          </li>
+      
+    {% endif %}
+    {% endeach %}
+ </ul>
 
 </section>
 

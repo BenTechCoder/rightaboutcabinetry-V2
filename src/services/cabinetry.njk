@@ -10,13 +10,20 @@ heroP: "Beautiful cabinets at the right price"
     <p>Click on the images to expand</p>
 </div>
 
-<!--MODAL IMAGE LIBRARY HERE  -->
-<section class=" gallery full-bleed " data-gallery="mini">
+
+<section>
+    <ul class=" wrapper gallery ">
     {% asyncEach item in collections.portfolio %}
     {% if "cabinetry" in item.data.tag %}
-        {% image item.data.image,
-        item.data.title %}
+   
+          <li>
+                {% image item.data.image,
+                item.data.title %}
+          </li>
+      
     {% endif %}
     {% endeach %}
+ </ul>
 
 </section>
+
