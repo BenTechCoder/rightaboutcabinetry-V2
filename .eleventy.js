@@ -7,6 +7,7 @@ const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const packageVersion = require("./package.json").version;
 const Image = require('@11ty/eleventy-img');
+const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
 
 async function imageShortcode(src, alt, sizes) {
   let metadata = await Image(src, {
@@ -28,8 +29,40 @@ async function imageShortcode(src, alt, sizes) {
     whitespaceMode: "inline"
   });
 }
+
+async function reelImageShortcode(src, alt, sizes = "100vw") {
+  if(alt === undefined) {
+    // You bet we throw an error on missing alt (alt="" works okay)
+    throw new Error(`Missing \`alt\` on responsiveimage from: ${src}`);
+  }
+
+  let metadata = await Image(src, {
+    widths: [600, 1000, 1400],
+    formats: ['webp', 'jpeg'],
+    urlPath: "/img/",
+    outputDir: "public/img/"
+  });
+
+  let lowsrc = metadata.jpeg[0];
+  let highsrc = metadata.jpeg[metadata.jpeg.length - 1];
+
+  return `<picture class="reel-img">
+    ${Object.values(metadata).map(imageFormat => {
+      return `  <source type="${imageFormat[0].sourceType}" srcset="${imageFormat.map(entry => entry.srcset).join(", ")}" sizes="${sizes}">`;
+    }).join("\n")}
+      <img
+        src="${lowsrc.url}"
+        alt="${alt}"
+        class="reel-img"
+        loading="lazy"
+        decoding="async">
+    </picture>`;
+}
+
+
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
+  eleventyConfig.addAsyncShortcode("image", imageShortcode);
+  eleventyConfig.addNunjucksAsyncShortcode("reelImage", reelImageShortcode);  
   eleventyConfig.addLiquidShortcode("image", imageShortcode);
   eleventyConfig.addPlugin(socialImages);
   eleventyConfig.addPlugin(syntaxHighlight);
@@ -78,6 +111,7 @@ module.exports = function (eleventyConfig) {
         .replace(/[().`,%·'"!?¿:@*]/g, ""),
   });
   eleventyConfig.setLibrary("md", markdownLibrary);
+  eleventyConfig.addPlugin(UpgradeHelper);
 
   return {
     passthroughFileCopy: true,

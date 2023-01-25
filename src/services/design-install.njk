@@ -11,14 +11,18 @@ heroP: "Have something in mind? We're here to help"
 </div>
 
 <!--MODAL IMAGE LIBRARY HERE  -->
-<section class=" gallery full-bleed " data-gallery="mini">
+<section>
+    <ul class=" wrapper gallery ">
     {% asyncEach item in collections.portfolio %}
     {% if "design-install" in item.data.tag %}
-        {% image item.data.image,
-        item.data.title %}
+   
+          <li>
+                {% image item.data.image,
+                item.data.title %}
+          </li>
+      
     {% endif %}
     {% endeach %}
-    {# {% image "src/img/WhatsApp Image 2021-10-09 at 7.54.30 PM.webp", "White Fireplace" %}
-   {% image "src/img/WhatsApp-Image 2021-10-16-at-3.53.21-PM.webp", "White complete Desk" %} #}
+ </ul>
 
 </section>

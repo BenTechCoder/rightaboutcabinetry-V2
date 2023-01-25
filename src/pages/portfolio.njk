@@ -5,12 +5,16 @@ description: "Right About Cabinetry has a wealth of experience. Take a look at o
 heroP: "Our very best work"
 ---
 
-<section class=" gallery full-bleed region " data-gallery="mini">
+<section class=" region flow" data-gallery="mini">
+<div class="wrapper"><h4>Click on the images to expand</p></div>
+<ul class=" wrapper gallery ">
     {% asyncEach item in collections.portfolio %}
-    {% image item.data.image,
-    item.data.title %}
+   <li>
+        {% image item.data.image,
+        item.data.title %}
+   </li>
     {% endeach %}
-
+</ul>
 </section>
 
 {% include "_partials/contact-snippet.njk" %}

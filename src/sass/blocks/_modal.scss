@@ -42,6 +42,8 @@
 
 .modal img {
   height: auto;
+  max-height: 95vh;
+  width: auto;
   object-fit: contain;
 }
 
@@ -53,3 +55,4 @@
 .modal.open .modalInner {
   transform: translateY(0);
 }
+
