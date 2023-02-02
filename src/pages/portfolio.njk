@@ -6,15 +6,17 @@ heroP: "Our very best work"
 ---
 
 <section class=" region flow" data-gallery="mini">
-<div class="wrapper"><h4>Click on the images to expand</p></div>
-<ul class=" wrapper gallery ">
-    {% asyncEach item in collections.portfolio %}
-   <li>
-        {% image item.data.image,
-        item.data.title %}
-   </li>
-    {% endeach %}
-</ul>
+      <div class="wrapper">
+            <h4>Click on the images to expand</p>
+      </div>
+      <ul class=" wrapper declare-gallery gallery ">
+            {% asyncEach item in collections.portfolio %}
+            <li>
+                  {% image item.data.image,
+                  item.data.title %}
+            </li>
+            {% endeach %}
+      </ul>
 </section>
 
 {% include "_partials/contact-snippet.njk" %}

@@ -6,24 +6,22 @@ heroP: "Beautiful cabinets at the right price"
 ---
 
 <div class="wrapper region flow">
-    <h2 class="underline">Our Quality Cabinets</h2>
-    <p>Click on the images to expand</p>
+      <h2 class="underline">Our Quality Cabinets</h2>
+      <p>Click on the images to expand</p>
 </div>
 
-
 <section>
-    <ul class=" wrapper gallery ">
-    {% asyncEach item in collections.portfolio %}
-    {% if "cabinetry" in item.data.tag %}
-   
-          <li>
-                {% image item.data.image,
-                item.data.title %}
-          </li>
-      
-    {% endif %}
-    {% endeach %}
- </ul>
+      <ul class=" wrapper declare-gallery gallery ">
+            {% asyncEach item in collections.portfolio %}
+            {% if "cabinetry" in item.data.tag %}
+
+                  <li>
+                        {% image item.data.image,
+                        item.data.title %}
+                  </li>
+
+            {% endif %}
+            {% endeach %}
+      </ul>
 
 </section>
-

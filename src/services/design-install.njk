@@ -6,23 +6,23 @@ heroP: "Have something in mind? We're here to help"
 ---
 
 <div class="wrapper region flow measure-long">
-    <h2 class="underline">Design and Installation makes your project a reality</h2>
-    <p>Click on the images to expand</p>
+      <h2 class="underline">Design and Installation makes your project a reality</h2>
+      <p>Click on the images to expand</p>
 </div>
 
 <!--MODAL IMAGE LIBRARY HERE  -->
 <section>
-    <ul class=" wrapper gallery ">
-    {% asyncEach item in collections.portfolio %}
-    {% if "design-install" in item.data.tag %}
-   
-          <li>
-                {% image item.data.image,
-                item.data.title %}
-          </li>
-      
-    {% endif %}
-    {% endeach %}
- </ul>
+      <ul class=" wrapper declare-gallery gallery ">
+            {% asyncEach item in collections.portfolio %}
+            {% if "design-install" in item.data.tag %}
+
+                  <li>
+                        {% image item.data.image,
+                        item.data.title %}
+                  </li>
+
+            {% endif %}
+            {% endeach %}
+      </ul>
 
 </section>

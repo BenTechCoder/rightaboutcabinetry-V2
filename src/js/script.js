@@ -46,4 +46,4 @@ navCloseButton.addEventListener("click", () => {
 
 // Use image gallery on the page
 
-Gallery(document.querySelector(".gallery"));
+const gallery = Gallery(document.querySelector(".declare-gallery"));
