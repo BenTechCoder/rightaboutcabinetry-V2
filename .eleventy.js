@@ -9,6 +9,8 @@ const packageVersion = require("./package.json").version;
 const Image = require('@11ty/eleventy-img');
 const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
 
+// TODO switch to parcel in 11ty processing by upgrading to 11ty 2.0
+
 async function imageShortcode(src, alt, sizes) {
   let metadata = await Image(src, {
     widths: [600, 1000, 1400],
