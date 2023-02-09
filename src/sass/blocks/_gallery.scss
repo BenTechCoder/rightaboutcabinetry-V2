@@ -86,6 +86,11 @@
   opacity: 0.7;
 }
 
+.declare-gallery img:focus {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
 .portfolio {
   --flow-space: 2rem;
 }

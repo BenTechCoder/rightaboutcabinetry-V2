@@ -24,6 +24,7 @@ async function imageShortcode(src, alt, sizes) {
     sizes: "100vw",
     loading: "lazy",
     decoding: "async",
+    tabindex: "0",
   };
 
   // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
@@ -57,6 +58,7 @@ async function reelImageShortcode(src, alt, sizes = "100vw") {
         alt="${alt}"
         class="reel-img"
         loading="lazy"
+        tabindex="0"
         decoding="async">
     </picture>`;
 }

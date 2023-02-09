@@ -47,3 +47,17 @@ navCloseButton.addEventListener("click", () => {
 // Use image gallery on the page
 
 const gallery = Gallery(document.querySelector(".declare-gallery"));
+
+const cards = document.querySelectorAll('.tdbc-card');  
+
+Array.prototype.forEach.call(cards, card => {
+    let down, up, link = card.querySelector('h3 a');
+    card.style.cursor = 'pointer';
+    card.onmousedown = () => down = +new Date();
+    card.onmouseup = () => {
+        up = +new Date();
+        if ((up - down) < 200) {
+            link.click();
+        }
+    }
+});
