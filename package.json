@@ -15,11 +15,11 @@
     "build:eleventy": "eleventy",
     "build:js": "parcel build",
     "postbuild": "postcss public/css/*.css -u autoprefixer cssnano -r --no-map",
-    "start": "eleventy --serve --incremental",
-    "build": "cross-env ELEVENTY_ENV=prod npm-run-all build:eleventy social-images",
+    "start": "cross-env ELEVENTY_ENV=dev npm-run-all build:sass --parallel watch:*",
+    "build": "cross-env ELEVENTY_ENV=prod npm-run-all build:sass build:eleventy build:js social-images",
     "lint": "stylelint 'src/sass/**/*.scss' 'src/sass/**/**/*.scss' 'src/sass/**/**/**/*.scss'",
     "lint:fix": "stylelint --fix 'src/sass/**/*.scss' 'src/sass/**/**/*.scss' 'src/sass/**/**/**/*.scss'",
-    "social-images": "eleventy-social-images --outputDir _site --dataFile social/pages.json --templatePath social/template.html --stylesPath social/sotemplate.css",
+    "social-images": "eleventy-social-images --outputDir public --dataFile social/pages.json --templatePath social/template.html --stylesPath social/sotemplate.css",
     "bump": "npm --no-git-tag-version version"
   },
   "repository": {
@@ -73,7 +73,6 @@
     }
   },
   "dependencies": {
-    "@11ty/eleventy-plugin-vite": "^4.0.0",
     "@11ty/eleventy-upgrade-help": "^2.0.3"
   }
 }

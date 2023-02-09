@@ -6,7 +6,7 @@ public
 _site
 src/css
 social
-.11ty-vite
+_site
 
 # secrets and errors
 .env
