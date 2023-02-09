@@ -15,7 +15,10 @@
 @use "blocks/card";
 @use "blocks/modal";
 @use "blocks/gallery";
+@use "blocks/arrow";
 // Utilities
+@use "utilities/center";
+@use "utilities/cluster";
 @use "utilities/switcher";
 @use "utilities/reel";
 @use "utilities/flow";

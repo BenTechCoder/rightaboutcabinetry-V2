@@ -1,0 +1,21 @@
+@use "../global" as *;
+
+.arrow {
+    fill: $primary;
+    animation-timing-function: ease-in-out;
+    animation-duration: 2s;
+    animation-name: arrow;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes arrow {
+    from {
+        transform: translateX(100px);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
