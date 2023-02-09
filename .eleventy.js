@@ -8,6 +8,7 @@ const markdownItAnchor = require("markdown-it-anchor");
 const packageVersion = require("./package.json").version;
 const Image = require('@11ty/eleventy-img');
 const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
+const EleventyVitePlugin = require("@11ty/eleventy-plugin-vite");
 
 // TODO switch to parcel in 11ty processing by upgrading to 11ty 2.0
 
@@ -69,12 +70,15 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(socialImages);
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(pluginRss);
+  eleventyConfig.addPlugin(EleventyVitePlugin);
 
   eleventyConfig.addWatchTarget("./src/sass/");
   // eleventyConfig.addPassthroughCopy("./src/js");
   eleventyConfig.addPassthroughCopy("./src/css");
   eleventyConfig.addPassthroughCopy("./src/fonts");
   eleventyConfig.addPassthroughCopy("./src/img");
+  eleventyConfig.addPassthroughCopy("./src/js");
+  eleventyConfig.addPassthroughCopy("./src/sass");
   eleventyConfig.addPassthroughCopy("./src/favicon.png");
   eleventyConfig.addPassthroughCopy("./dist/js/");
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
@@ -119,7 +123,7 @@ module.exports = function (eleventyConfig) {
     passthroughFileCopy: true,
     dir: {
       input: "src",
-      output: "public",
+      output: "_site",
     },
   };
 };

@@ -14,7 +14,8 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
     <link rel="manifest" href="/img/site.webmanifest">
-    <link href="{{ '/css/style.css' | url }}" rel="stylesheet"/>
+    {# <link href="{{ '/css/style.css' | url }}" rel="stylesheet"/> #}
+    <link rel="stylesheet" href="/sass/style.scss">
     <meta name="twitter:card" content="summary_large_image"/>
     {% if meta.twitterUsername %}
       <meta name="twitter:creator" content="@{{ meta.twitterUsername }}"/>
@@ -92,6 +93,6 @@
 
     {% include "_partials/footer.njk" %}
 
-    <script defer src="/js/script.js"></script>
+    <script defer type="module" src="/js/script.js"></script>
   </body>
 </html>
