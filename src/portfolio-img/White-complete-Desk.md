@@ -5,4 +5,5 @@ tag:
 - portfolio
 - cabinetry
 - design-install
+- homepage
 ---
