@@ -12,4 +12,4 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Image", name: "image", widget: "image"}
-      - {label: "Tags", name: "tag", widget: "list", allow_add: false}
+      - {label: "Tags", name: "tag", widget: "select", multiple: true, options: ["cabinetry", "woodwork", "design-install", "bathroom"]}
