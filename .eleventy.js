@@ -10,6 +10,10 @@ const Image = require('@11ty/eleventy-img');
 const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
 
 async function imageShortcode(src, alt, sizes) {
+  if (src.slice(0, 3) != "src") {
+    src = "src" + src
+  }
+
   let metadata = await Image(src, {
     widths: [600, 1000, 1400],
     formats: ["webp", "jpeg"],
@@ -35,8 +39,12 @@ async function reelImageShortcode(src, alt, sizes = "100vw") {
     // You bet we throw an error on missing alt (alt="" works okay)
     throw new Error(`Missing \`alt\` on responsiveimage from: ${src}`);
   }
+  if (src.slice(0, 3) != "src") {
+    src = "src" + src
+  }
 
   let metadata = await Image(src, {
+    
     widths: [600, 1000, 1400],
     formats: ['webp', 'jpeg'],
     urlPath: "/img/",
