@@ -7,7 +7,7 @@ const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const packageVersion = require("./package.json").version;
 const Image = require('@11ty/eleventy-img');
-const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
+
 
 // TODO switch to parcel in 11ty processing by upgrading to 11ty 2.0
 
@@ -123,7 +123,7 @@ module.exports = function (eleventyConfig) {
         .replace(/[().`,%·'"!?¿:@*]/g, ""),
   });
   eleventyConfig.setLibrary("md", markdownLibrary);
-  eleventyConfig.addPlugin(UpgradeHelper);
+
 
   return {
     passthroughFileCopy: true,
