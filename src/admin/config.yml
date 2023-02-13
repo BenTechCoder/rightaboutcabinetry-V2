@@ -12,4 +12,16 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Image", name: "image", widget: "image"}
-      - {label: "Tags", name: "tag", widget: "select", multiple: true, options: ["cabinetry", "woodwork", "design-install", "bathroom", "homepage"]}
+      - {label: "Tags", name: "tag", widget: "select", multiple: true, options: ["cabinetry", "woodwork", "design-install", "bathroom", "kitchen", "homepage"]}
+
+  - name: "services"
+    label: "services"
+    folder: "src/services"
+    fields:
+      - {label: "Title: this is what google will see as the title", name: "title", widget: "string"}
+      - {label: "Title: this is what google will see as the description", name: "description", widget: "string"}
+      - {label: "Title: this field is what the title will be on the page", name: "heroContent", widget: "string"}
+      - {label: "Title: this is the subtitle displayed on the page", name: "heroP", widget: "string"}
+      - {label: "Name of service, determines which ", name: "service", widget: "select", options: ["cabinetry", "woodwork", "design-install", "bathroom"]}
+      - {label: "Title of the paragraph below the hero", name: "contentHeader", widget: "string"}
+      - { label: 'Service content', name: 'body', widget: 'markdown' }

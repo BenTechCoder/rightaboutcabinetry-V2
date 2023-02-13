@@ -71,8 +71,5 @@
       ],
       "distDir": "./public/js"
     }
-  },
-  "dependencies": {
-    "@11ty/eleventy-upgrade-help": "^2.0.3"
   }
 }

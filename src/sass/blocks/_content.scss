@@ -1,0 +1,17 @@
+.content time {
+    --flow-space: var(--space-m);
+    display: block;
+  }
+  
+  .content :is(h2, h3) {
+    --flow-space: var(--space-l);
+  }
+  
+  .content :is(h2, h3) + * {
+    --flow-space: var(--space-m);
+  }
+  
+  .content figure,
+  .content figure + * {
+    --flow-space: var(--space-m);
+  }
