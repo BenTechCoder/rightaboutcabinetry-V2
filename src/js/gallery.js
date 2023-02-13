@@ -26,7 +26,6 @@ export default function Gallery(gallery) {
 
   function closeModal() {
     modal.classList.remove("open");
-    // TODO: add event listeners for clicks and keyboard..
     // removeImage();
     closeButton.removeEventListener("click", closeModal);
     window.removeEventListener("keyup", handleKeyUp);

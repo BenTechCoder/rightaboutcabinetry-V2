@@ -7,9 +7,14 @@ const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const packageVersion = require("./package.json").version;
 const Image = require('@11ty/eleventy-img');
-const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
+
+
+// TODO switch to parcel in 11ty processing by upgrading to 11ty 2.0
 
 async function imageShortcode(src, alt, sizes) {
+  if (src.slice(0, 3) != "src") {
+    src = "src" + src
+  }
   let metadata = await Image(src, {
     widths: [600, 1000, 1400],
     formats: ["webp", "jpeg"],
@@ -22,6 +27,7 @@ async function imageShortcode(src, alt, sizes) {
     sizes: "100vw",
     loading: "lazy",
     decoding: "async",
+    tabindex: "0",
   };
 
   // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
@@ -34,6 +40,10 @@ async function reelImageShortcode(src, alt, sizes = "100vw") {
   if(alt === undefined) {
     // You bet we throw an error on missing alt (alt="" works okay)
     throw new Error(`Missing \`alt\` on responsiveimage from: ${src}`);
+  }
+
+  if (src.slice(0, 3) != "src") {
+    src = "src" + src
   }
 
   let metadata = await Image(src, {
@@ -55,6 +65,7 @@ async function reelImageShortcode(src, alt, sizes = "100vw") {
         alt="${alt}"
         class="reel-img"
         loading="lazy"
+        tabindex="0"
         decoding="async">
     </picture>`;
 }
@@ -74,6 +85,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/fonts");
   eleventyConfig.addPassthroughCopy("./src/img");
   eleventyConfig.addPassthroughCopy("./src/favicon.png");
+  eleventyConfig.addPassthroughCopy("./src/admin");
   eleventyConfig.addPassthroughCopy("./dist/js/");
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
   eleventyConfig.addShortcode("packageVersion", () => `v${packageVersion}`);
@@ -111,7 +123,7 @@ module.exports = function (eleventyConfig) {
         .replace(/[().`,%·'"!?¿:@*]/g, ""),
   });
   eleventyConfig.setLibrary("md", markdownLibrary);
-  eleventyConfig.addPlugin(UpgradeHelper);
+
 
   return {
     passthroughFileCopy: true,

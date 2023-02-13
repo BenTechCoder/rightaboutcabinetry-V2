@@ -1,0 +1,15 @@
+.center {
+    box-sizing: content-box;
+    margin-inline: auto;
+    // text-align: center;
+    max-inline-size: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  [center-type="footer"] {
+    // wanted to keep all of footer inside wrapper therfore disabling the content box property
+    text-align: start;
+    box-sizing: border-box;
+  }

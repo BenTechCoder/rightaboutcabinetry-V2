@@ -6,11 +6,28 @@
       <div><a class="" href="/portfolio">Portfolio</a></div>
    </div>
  
- <div class="reel full-bleed">
-    {% reelImage "src/img/WhatsApp Image 2021-10-09 at 7.54.30 PM.webp", "White Fireplace" %}
-    {% reelImage "src/img/WhatsApp-Image 2021-10-16-at-3.53.21-PM.webp", "White complete Desk" %}
-    {% reelImage "src/img/WhatsApp Image 2022-01-30 at 4.18.20 PM.webp", "White Bathroom sink with marble countertop" %}
+ <div class="reel declare-gallery full-bleed">
+   {#
+    
     {% reelImage "src/img/messages_0 (1).webp", "Bathroom with brown sink" %}
-    {% reelImage "src/img/WhatsApp Image 2021-10-09 at 7.34.57 PM.webp", "Bathroom with brown sink" %}
+    {% reelImage "src/img/WhatsApp Image 2021-10-09 at 7.34.57 PM.webp", "Bathroom with brown sink" %} #}
+     {% asyncEach item in collections.portfolio %}
+    {% if "homepage" in item.data.tag %}
+
+
+      {% reelImage item.data.image, item.data.title %}
+
+
+    {% endif %}
+    {% endeach %}
  </div>
+     <svg viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg" class="icon center arrow">
+    <g fill-rule="evenodd">
+        <path d="M0 92.168 92.299 0l959.931 959.935L92.299 1920 0 1827.57l867.636-867.635L0 92.168Z"/>
+        <path d="M868 92.168 960.299 0l959.931 959.935L960.299 1920 868 1827.57l867.64-867.635L868 92.168Z"/>
+    </g>
+</svg>
+     
+
+ {# TODO ADD ARROW INDICTING YOU MUST SCROLL TO THE SIDE #}
 </section>

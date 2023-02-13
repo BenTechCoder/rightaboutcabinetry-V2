@@ -3,8 +3,10 @@ node_modules
 .parcel-cache
 # build artefacts
 public
+_site
 src/css
 social
+_site
 
 # secrets and errors
 .env
