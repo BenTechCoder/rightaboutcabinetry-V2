@@ -5,6 +5,7 @@
   overflow-x: auto;
   overflow-y: hidden;
   scrollbar-color: #f9f9f9 #023064;
+  width: 100vw;
 }
 
 .reel::-webkit-scrollbar {
@@ -43,7 +44,7 @@
 }
 
 .reel > * + * {
-  margin-inline-start: 2rem;
+  margin-inline-start: 1rem;
 }
 
 .reel.overflowing {
