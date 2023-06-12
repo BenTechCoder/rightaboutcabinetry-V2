@@ -5,11 +5,11 @@ description: "Right About Cabinetry has a wealth of experience. Take a look at o
 heroP: "Our very best work"
 ---
 
-<section class=" region flow" data-gallery="mini">
+<section class="region flow gallery-pattern">
       <div class="wrapper">
-            <h4>Click on the images to expand</p>
+            <h4 class="bg-light">Click on the images to expand</p>
       </div>
-      <ul class=" wrapper declare-gallery gallery ">
+      <ul class=" gutter declare-gallery gallery region">
             {% asyncEach item in collections.portfolio %}
             <li>
                   {% image item.data.image,
