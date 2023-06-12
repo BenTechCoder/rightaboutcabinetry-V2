@@ -25,7 +25,7 @@
   &:focus {
     outline-color: transparent;
     outline-style: solid;
-    box-shadow: 0 0 0 3px scale-color(tdbc-color("primary"), $lightness: -30%);
+    box-shadow: 0 0 0 3px scale-color(tdbc-color("light"), $lightness: -30%);
   }
 
   &--small {
@@ -132,4 +132,9 @@
   color: $light;
   opacity: 1;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-button {
+  padding: var(--space-s, 2em);
 }

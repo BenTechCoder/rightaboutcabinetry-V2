@@ -4,12 +4,12 @@ layout: page.njk
 
 <div class="wrapper region flow service-text">
       <h2 class="underline">{{contentHeader}}</h2>
+      <p>Click on the images to expand</p>
       {{ content | safe }}
 </div>
 
-<section class="wrapper">
-      <p>Click on the images to expand</p>
-      <ul class="declare-gallery gallery">
+<section class="gallery-pattern region">
+      <ul class="declare-gallery gallery gutter">
             {% asyncEach item in collections.portfolio %}
             {% if service in item.data.tag %}
 
