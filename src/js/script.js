@@ -1,5 +1,9 @@
 import Gallery from './gallery'
 
+// copyright date
+
+const copyright = document.querySelector('.copyright')
+copyright.textContent =  `©${new Date().getFullYear()}` + copyright.textContent;
 
 //navbar script
 const navElement = document.getElementById("main-nav");
