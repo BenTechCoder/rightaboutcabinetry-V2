@@ -1,139 +1,262 @@
 @use "../global" as *;
 
+// nav {
+//   color: $light;
+//   display: flex;
+//   align-items: center;
+//   padding: 2em;
+//   margin: 0 1em;
+//   justify-content: space-between;
+// }
+
+// .logo {
+//   text-decoration: underline;
+//   margin: 0;
+// }
+
+// .dropdown-link-container > a {
+//   margin-left: 22px; /* space out all our links */
+// }
+
+// .mobile-dropdown-toggle {
+//   border: none;
+//   background: none;
+//   display: none; /* hide our hamburger button until we're on mobile */
+// }
+
+// .nav-close-div {
+//   display: none;
+// }
+
+// .nav-link {
+//   color: $light;
+//   text-decoration-color: $light;
+// }
+
+// .nav-link:hover,
+// .nav-link:focus {
+//   text-decoration: underline;
+//   text-decoration-color: $accent;
+// }
+// .logo:hover,
+// .logo:focus {
+//   text-decoration: underline;
+//   text-decoration-color: $accent;
+// }
+
+// @media (max-width: 768px) {
+//   nav {
+//     margin: 0;
+//   }
+//   .dropdown-link-container {
+//     padding-left: 7vw;
+//     padding-right: 7vw;
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     height: 100vh;
+//     /* fix nav height on mobile safari, where 100vh is a little off */
+//     height: -webkit-fill-available;
+//     /* then, arrange our links top to bottom */
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: flex-end;
+
+//     z-index: 0;
+//     opacity: 0; /* fade out */
+//     transform: translateY(-100%); /* move out of view */
+//     transition: transform 0.2s, opacity 0.2s; /* transition these smoothly */
+//     background: $light;
+//   }
+
+//   .nav-link {
+//     font-size: var(--step-2);
+//     margin-top: var(--space-l, 1.5em);
+//     color: $dark;
+//     text-decoration-color: $dark;
+//   }
+
+//   nav.dropdown-opened > .dropdown-link-container {
+//     color: $dark;
+//     z-index: 1;
+//     opacity: 1; /* fade in */
+//     transform: translateY(0); /* move into view */
+//   }
+
+//   .logo,
+//   .mobile-dropdown-toggle {
+//     z-index: 2;
+//   }
+//   .mobile-dropdown-toggle {
+//     display: initial;
+//   }
+//   .nav-close-div {
+//     display: flex;
+//     text-align: center;
+//     align-content: flex-end;
+//   }
+// }
+
+// // hamburger icon animation
+
+// .bar-1,
+// .bar-2,
+// .bar-3 {
+//   width: 2rem;
+//   height: 0.25rem;
+//   border-radius: 10px;
+//   position: relative;
+//   transform-origin: 1px;
+//   margin: 5px auto;
+//   background-color: $light;
+//   transition: all 0.3s linear;
+// }
+
+// .bar-1,
+// .bar-3 {
+//   transform: rotate(0);
+// }
+// .bar-2 {
+//   opacity: 1;
+//   transform: translateX(0);
+// }
+
+// .open {
+//   .bar-1 {
+//     background-color: $dark;
+//     transform: rotate(44deg);
+//   }
+//   .bar-2 {
+//     opacity: 0;
+//     transform: translateX(20px);
+//   }
+//   .bar-3 {
+//     background-color: $dark;
+//     transform: rotate(-40deg);
+//   }
+// }
+
+/* Use the alternative box model */
+
+/* Remove the default :focus outline */
+
+/* ACTIVATE IN STYLE.SCSS */
+
+@media (min-width: 48em) {
+  nav {
+    --nav-button-display: none;
+    --nav-position: static;
+  }
+
+  .mainnav-list {
+    --nav-background-color: none;
+    --nav-color: #{$light};
+    --nav-list-layout: row;
+    --nav-list-position: relative;
+    --nav-list-padding: 0;
+    --nav-list-height: auto;
+    --nav-list-width: 100%;
+    --nav-list-shadow: none;
+    --nav-list-transform: none;
+    --nav-list-visibility: visible;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .mainnav-list {
+    transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55), visibility 0.3s linear;
+  }
+}
+
 nav {
-  color: $light;
+  position: var(--nav-position, static) !important;
+  inset-block-start: 1rem;
+  inset-inline-end: 1rem;
   display: flex;
-  align-items: center;
-  padding: 2em;
-  margin: 0 1em;
   justify-content: space-between;
 }
 
-.logo {
-  text-decoration: underline;
+/* Remove default list styling and create layout for list */
+.mainnav-list {
+  color: var(--nav-color, $dark);
+  z-index: 1;
+  background-color: var(--nav-background-color, $light);
+  // box-shadow: var(--nav-list-shadow, -5px 0 11px 0 rgb(0 0 0 / 0.2));
+  display: flex;
+  flex-direction: var(--nav-list-layout, column);
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  height: var(--nav-list-height, 100vh);
+  list-style: none;
   margin: 0;
+  padding: var(--nav-list-padding, 2rem);
+  position: var(--nav-list-position, fixed);
+  inset-block-start: 0; /* Logical property. Equivalent to top: 0; */
+  inset-inline-end: 0; /* Logical property. Equivalent to right: 0; */
+  width: var(--nav-list-width, min(22rem, 100vw));
+  visibility: var(--nav-list-visibility, visible);
 }
 
-.dropdown-link-container > a {
-  margin-left: 22px; /* space out all our links */
+[aria-expanded="false"] + .mainnav-list {
+  transform: var(--nav-list-transform, translateX(100%));
+  visibility: var(--nav-list-visibility, hidden);
 }
 
-.mobile-dropdown-toggle {
-  border: none;
-  background: none;
-  display: none; /* hide our hamburger button until we're on mobile */
+[aria-expanded="false"] {
+  fill: $light;
 }
 
-.nav-close-div {
-  display: none;
+/* Basic link styling */
+
+/* Change the border-color on :hover and :focus */
+a:where(:hover, :focus) {
+  --border-color: var(--text-color);
 }
 
-.nav-link {
-  color: $light;
-  text-decoration-color: $light;
-}
+/* Change border-color and color for the active page */
 
-.nav-link:hover,
-.nav-link:focus {
-  text-decoration: underline;
-  text-decoration-color: $accent;
-}
-.logo:hover,
-.logo:focus {
-  text-decoration: underline;
-  text-decoration-color: $accent;
-}
-
-@media (max-width: 768px) {
-  nav {
-    margin: 0;
-  }
-  .dropdown-link-container {
-    padding-left: 7vw;
-    padding-right: 7vw;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100vh;
-    /* fix nav height on mobile safari, where 100vh is a little off */
-    height: -webkit-fill-available;
-    /* then, arrange our links top to bottom */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-
-    z-index: 0;
-    opacity: 0; /* fade out */
-    transform: translateY(-100%); /* move out of view */
-    transition: transform 0.2s, opacity 0.2s; /* transition these smoothly */
-    background: $light;
-  }
-
-  .nav-link {
-    font-size: var(--step-2);
-    margin-top: var(--space-l, 1.5em);
-    color: $dark;
-    text-decoration-color: $dark;
-  }
-
-  nav.dropdown-opened > .dropdown-link-container {
-    color: $dark;
-    z-index: 1;
-    opacity: 1; /* fade in */
-    transform: translateY(0); /* move into view */
-  }
-
-  .logo,
-  .mobile-dropdown-toggle {
-    z-index: 2;
-  }
-  .mobile-dropdown-toggle {
-    display: initial;
-  }
-  .nav-close-div {
-    display: flex;
-    text-align: center;
-    align-content: flex-end;
-  }
-}
-
-// hamburger icon animation
-
-.bar-1,
-.bar-2,
-.bar-3 {
-  width: 2rem;
-  height: 0.25rem;
-  border-radius: 10px;
+button {
+  all: unset;
+  display: var(--nav-button-display, flex);
   position: relative;
-  transform-origin: 1px;
-  margin: 5px auto;
-  background-color: $light;
-  transition: all 0.3s linear;
+  z-index: 2;
 }
 
-.bar-1,
-.bar-3 {
-  transform: rotate(0);
-}
-.bar-2 {
-  opacity: 1;
-  transform: translateX(0);
+
+.dropdown {
+  display: none;
+  li {
+    display: block;
+    background-color: $light;
+    color: $dark;
+    padding: var(--space-xs);
+  }
 }
 
-.open {
-  .bar-1 {
-    background-color: $dark;
-    transform: rotate(44deg);
+nav li:hover .dropdown {
+  display: block;
+}
+
+
+@media (min-width: 48em) {
+  .dropdown {
+    display: none;
+    position: absolute;
+  
+  
+    li {
+      display: block;
+    }
   }
-  .bar-2 {
-    opacity: 0;
-    transform: translateX(20px);
+  
+  nav li:hover .dropdown {
+    display: block;
   }
-  .bar-3 {
-    background-color: $dark;
-    transform: rotate(-40deg);
+
+  nav li:focus-within .dropdown {
+    display: block;
   }
+  
 }
